@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <template #body>
-      <div>About Page</div>
+      <h1>About Page</h1>
       <div>{{ aboutData.about }}</div>
     </template>
   </NuxtLayout>

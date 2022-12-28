@@ -1,12 +1,14 @@
 <template>
   <NuxtLayout>
     <template #body>
-      <div>Contact Page</div>
-      <form action=""></form>
+      <h1>Contact Page</h1>
+      <ContactForm />
     </template>
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+import ContactForm from "~~/components/ContactForm.vue";
+</script>
 
 <style></style>
