@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
-    "emailjs": "^4.0.1"
+    "emailjs": "^4.0.1",
+    "pinia": "^2.0.28"
   }
 }

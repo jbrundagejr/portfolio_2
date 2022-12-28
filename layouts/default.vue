@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <NavHeader />
-    <slot name="body"></slot>
-  </div>
+  <NavHeader />
+  <slot name="body"></slot>
 </template>
 
 <script setup>

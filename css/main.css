@@ -7,6 +7,12 @@ h1 {
   font-family: "Reckless Neue", serif;
   font-size: 48px;
   line-height: 110%;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 110%;
 }
 
 a {
