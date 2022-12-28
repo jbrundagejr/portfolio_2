@@ -8,6 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.12"
+    "nuxt": "^3.0.0-rc.14"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "emailjs": "^4.0.1"
   }
 }

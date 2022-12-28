@@ -1,10 +1,11 @@
 <template>
-  <div>About</div>
+  <NuxtLayout>
+    <template #body>
+      <div>About Page</div>
+    </template>
+  </NuxtLayout>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

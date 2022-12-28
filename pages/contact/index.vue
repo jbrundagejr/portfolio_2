@@ -1,11 +1,11 @@
 <template>
-  <div>Contact</div>
+  <NuxtLayout>
+    <template #body>
+      <div>Contact Page</div>
+    </template>
+  </NuxtLayout>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style></style>

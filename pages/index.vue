@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <h1>Home Page</h1></div>
+  <NuxtLayout>
+    <template #body>
+      <h1>Home</h1>
+    </template>
+  </NuxtLayout>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
-<style>
-
-</style>
+<style></style>

@@ -8,3 +8,8 @@ h1 {
   font-size: 48px;
   line-height: 110%;
 }
+
+a {
+  text-decoration: none;
+  color: #333333;
+}

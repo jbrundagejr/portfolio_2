@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Reckless Neue";
-  src: url("../assets/fonts/RecklessNeue-Thin.otf") format("otf");
+  src: url("@/assets/fonts/RecklessNeue-Thin.otf") format("otf");
   font-display: swap;
-  font-weight: light;
+  /* font-weight: light; */
 }
