@@ -2,13 +2,13 @@
   <div ref="step" :id="project.title">
     <img v-if="project.image" :src="project.image" :alt="project.title" />
     <div v-if="project.title" class="meta__container">
-      <h2>Project Name:</h2>
-      <h2>{{ project.title }}</h2>
+      <h3>Project Name:</h3>
+      <h3>{{ project.title }}</h3>
     </div>
     <div v-if="project.tools.length" class="meta__container">
-      <h2>Tools Used:</h2>
-      <div>
-        <h2 v-for="tool in project.tools" :key="tool">{{ tool }}</h2>
+      <h3>Tools Used:</h3>
+      <div class="tool__container">
+        <h3 v-for="tool in project.tools" :key="tool">{{ tool }}</h3>
       </div>
     </div>
     <div v-if="project.notes || project.link">
@@ -30,5 +30,11 @@ const props = defineProps(["project"]);
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+
+.tool__container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 </style>

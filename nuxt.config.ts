@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   css: [
     "@/css/fonts.css",
-    "@/css/main.css",
+    "@/css/mobile.css",
     "@/css/tablet.css",
     "@/css/desktop.css",
   ],

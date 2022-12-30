@@ -1,11 +1,18 @@
 <template>
   <NuxtLayout>
     <template #body>
-      <h1>Home</h1>
+      <div id="home" class="container">
+        <h1>Home</h1>
+      </div>
     </template>
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
 
-<style></style>
+useHead({
+  title: "Jon's Portfolio"
+})
+</script>
+
+<style scoped></style>

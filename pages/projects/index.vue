@@ -1,12 +1,16 @@
 <template>
   <NuxtLayout>
     <template #body>
-      <h1>Work Page</h1>
-      <Project
-        v-for="project in projects"
-        :key="project.title"
-        :project="project"
-      />
+      <div id="projects" class="container">
+        <h1>Projects.</h1>
+        <div class="projects__container">
+          <Project
+            v-for="project in projects"
+            :key="project.title"
+            :project="project"
+          />
+        </div>
+      </div>
     </template>
   </NuxtLayout>
 </template>
@@ -14,6 +18,16 @@
 <script setup>
 import { projects } from "~~/data/projects.js";
 import Project from "~~/components/Project.vue";
+
+useHead({
+  title: "Projects"
+})
 </script>
 
-<style scoped></style>
+<style scoped>
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+</style>

@@ -1,10 +1,12 @@
 <template>
   <NuxtLayout>
     <template #body>
-      <h1>About Page</h1>
-      <div>
-        <img :src="about.img" alt="Jon Brundage jr." />
-        <p>{{ about.bio }}</p>
+      <div id="about" class="container">
+        <h1>About.</h1>
+        <div class="half__grid">
+          <img :src="about.img" alt="Jon Brundage jr." />
+          <p>{{ about.bio }}</p>
+        </div>
       </div>
     </template>
   </NuxtLayout>
@@ -12,6 +14,10 @@
 
 <script setup>
 import { about } from "~~/data/about.js";
+
+useHead({
+  title: "About"
+})
 </script>
 
 <style scoped></style>
