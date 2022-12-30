@@ -31,13 +31,34 @@
 </template>
 
 <script setup>
+import emailjs from "@emailjs/browser";
+
 const name = ref("");
 const email = ref("");
 const subject = ref("");
 const body = ref("");
+const submitted = ref(false);
+
+console.log(process.env.NUXT_ENV_EMAILJS_SERVICE_ID);
 
 const handleSubmit = () => {
-  console.log("Submitted!");
+  const templateParams = {
+    name: name.value,
+    email: email.value,
+    subject: subject.value,
+    body: body.value,
+  };
+  // emailjs.send(
+  //   process.env.NUXT_ENV_EMAILJS_SERVICE_ID,
+  //   process.env.NUXT_ENV_EMAILJS_TEMPLATE_ID,
+  //   templateParams,
+  //   process.env.NUXT_ENV_EMAILJS_PUB_KEY
+  // );
+  submitted.value = true;
+  name.value = "";
+  email.value = "";
+  subject.value = "";
+  body.value = "";
 };
 </script>
 
