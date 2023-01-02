@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 
 h1 {
+  font-family: "Grotesk", sans-serif;
   font-size: 48px;
   line-height: 110%;
 }
@@ -41,7 +42,7 @@ p {
 }
 
 a {
-  font-family: "Grotesk Super";
+  font-family: "Grotesk Super", sans-serif;
   line-height: 125%;
   text-decoration: none;
 }
