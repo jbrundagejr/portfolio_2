@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="container">
     <NuxtLink to="/">Home</NuxtLink>
     <div>
       <NuxtLink to="/about">About</NuxtLink>
@@ -22,18 +22,11 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 24px;
 }
 
 header div {
   display: flex;
   flex-direction: row;
   gap: 20px;
-}
-
-@media (min-width: 768px) {
-  header {
-    padding: 30px;
-  }
 }
 </style>

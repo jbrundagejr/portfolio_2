@@ -4,17 +4,25 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   margin: 0;
   padding: 0;
   color: #333333;
 }
 
-
 h1 {
-  font-family: "Grotesk", sans-serif;
+  font-family: "Grotesk Super";
   font-size: 48px;
   line-height: 110%;
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
 }
 
 h2 {
@@ -32,7 +40,8 @@ h4 {
   line-height: 100%;
 }
 
-a, p {
+a,
+p {
   font-size: 16px;
 }
 
@@ -45,6 +54,7 @@ a {
   font-family: "Grotesk Super", sans-serif;
   line-height: 125%;
   text-decoration: none;
+  font-variant: small-caps;
 }
 
 .half__grid {

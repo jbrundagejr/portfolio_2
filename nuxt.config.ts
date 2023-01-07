@@ -1,10 +1,10 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   css: [
-    "@/css/fonts.css",
-    "@/css/mobile.css",
-    "@/css/tablet.css",
-    "@/css/desktop.css",
+    "~/assets/styles/fonts.css",
+    "~/assets/styles/mobile.css",
+    "~/assets/styles/tablet.css",
+    "~/assets/styles/desktop.css",
   ],
   modules: ["@pinia/nuxt"],
 });
