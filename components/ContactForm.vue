@@ -1,4 +1,6 @@
 <template>
+  <head>
+  </head>
   <div v-if="submitted" class="container submitted">
   <h2>Thanks for reaching out! I'll get back to you shortly.</h2>
   </div>

@@ -2,7 +2,7 @@
   <NuxtLayout>
     <template #body>
       <div id="contact" class="container">
-        <h1>Contact.</h1>
+        <h1>Contact</h1>
         <ContactForm />
       </div>
     </template>

@@ -1,5 +1,5 @@
 body {
-  background-color: #c9e0e8;
+  background-color: #FFFAFA;
   margin: 0;
   padding: 0;
 }
@@ -21,7 +21,6 @@ h1 {
   font-family: "Grotesk";
   font-size: 48px;
   line-height: 110%;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -40,6 +39,10 @@ h4 {
   line-height: 100%;
 }
 
+h1, a {
+  letter-spacing: 0.05em;
+}
+
 a,
 p {
   font-size: 16px;
@@ -54,7 +57,7 @@ a {
   font-family: "Grotesk Super", sans-serif;
   line-height: 125%;
   text-decoration: none;
-  font-variant: small-caps;
+  text-transform: uppercase;
 }
 
 .half__grid {

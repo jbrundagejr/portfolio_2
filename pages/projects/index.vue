@@ -2,7 +2,7 @@
   <NuxtLayout>
     <template #body>
       <div id="projects" class="container">
-        <h1>Projects.</h1>
+        <h1>Projects</h1>
         <div class="projects__container">
           <Project
             v-for="project in projects"
