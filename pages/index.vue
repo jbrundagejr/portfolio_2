@@ -3,6 +3,7 @@
     <template #body>
       <div id="home" class="container">
         <h1>Home</h1>
+        <div id="cube"></div>
       </div>
     </template>
   </NuxtLayout>
