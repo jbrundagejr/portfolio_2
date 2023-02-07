@@ -1,30 +1,38 @@
 <template>
   <header class="container">
-      <NavLink routeName="about" />
-      <NavLink routeName="projects" />
-      <NavLink routeName="contact" />
+    <NuxtLink to="/">Home </NuxtLink>
+    <div class="pages">
+      <NuxtLink to="about">About</NuxtLink>
+      <NuxtLink to="projects">Projects</NuxtLink>
+      <NuxtLink to="contact">Contact</NuxtLink>
+    </div>
   </header>
 </template>
 
 <script setup>
-import { useStore } from "~/store/store";
-import { storeToRefs } from "pinia";
-import NavLink from "./NavLink.vue";
+import { useStore } from "~/store/store"
+import { storeToRefs } from "pinia"
 
-const store = useStore();
-const { mobileMenuOpen } = storeToRefs(store);
-
+const store = useStore()
+const { mobileMenuOpen } = storeToRefs(store)
 </script>
 
 <style scoped>
-header {
+header,
+.pages {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+}
+
+header {
+  justify-content: space-between;
+}
+
+.pages {
   gap: 20px;
 }
 
-@media(min-width: 768px){
+@media (min-width: 768px) {
   header {
     gap: 30px;
   }
