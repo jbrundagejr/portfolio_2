@@ -2,7 +2,6 @@
   <NuxtLayout>
     <template #body>
       <div id="home" class="container">
-        <h1>Home</h1>
         <Cube />
       </div>
     </template>
@@ -10,10 +9,10 @@
 </template>
 
 <script setup>
-import Cube from '~/components/Cube.vue'
+import Cube from "~/components/Cube.vue"
 
 useHead({
-  title: "Jon's Portfolio"
+  title: "Jon's Portfolio",
 })
 </script>
 
