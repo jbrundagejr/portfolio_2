@@ -2,7 +2,7 @@
   <NuxtLayout>
     <template #body>
       <div id="home" class="container">
-        <Cube />
+        <!-- <Cube /> -->
       </div>
     </template>
   </NuxtLayout>

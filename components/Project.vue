@@ -1,5 +1,9 @@
 <template>
-  <div ref="step" :id="project.title">
+  <div
+    ref="step"
+    :id="project.title"
+    :class="currentProject === index ? current : notCurrent"
+  >
     <img v-if="project.image" :src="project.image" :alt="project.title" />
     <div v-if="project.title" class="meta__container">
       <h3>Project Name:</h3>
@@ -21,11 +25,57 @@
 </template>
 
 <script setup>
-const step = ref({});
-const props = defineProps(["project"]);
+import { ref, onMounted } from "vue"
+import { useStore } from "~~/store/store"
+import { storeToRefs } from "pinia"
+import { onIntersect } from "~~/composables/onIntersect"
+
+const store = useStore()
+const { currentProject } = storeToRefs(store)
+
+const step = ref({})
+const observer = ref({})
+const props = defineProps(["project", "index"])
+
+const index = props.index
+
+const options = {
+  threshold: 0.5,
+}
+
+const onDownEnter = () => {
+  currentProject.value = index
+}
+
+const onUpEnter = () => {
+  currentProject.value = index
+}
+
+onMounted(() => {
+  observer.value = onIntersect({
+    el: step.value,
+    downEnter: onDownEnter,
+    upEnter: onUpEnter,
+    options,
+  })
+})
 </script>
 
 <style scoped>
+.current {
+  opacity: 1;
+  transition: all 350ms;
+}
+
+.current img {
+  position: sticky;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+.notCurrent {
+  opacity: 0;
+}
 .meta__container {
   display: flex;
   flex-direction: row;
@@ -36,5 +86,11 @@ const props = defineProps(["project"]);
   display: flex;
   flex-direction: row;
   gap: 15px;
+}
+
+img {
+  width: 50%;
+  aspect-ratio: 16 /9;
+  object-fit: cover;
 }
 </style>

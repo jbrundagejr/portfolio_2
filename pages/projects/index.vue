@@ -5,9 +5,10 @@
         <h1>Projects</h1>
         <div class="projects__container">
           <Project
-            v-for="project in projects"
+            v-for="(project, i) in projects"
             :key="project.title"
             :project="project"
+            :index="i"
           />
         </div>
       </div>
@@ -16,11 +17,11 @@
 </template>
 
 <script setup>
-import { projects } from "~~/data/projects.js";
-import Project from "~~/components/Project.vue";
+import { projects } from "~~/data/projects.js"
+import Project from "~~/components/Project.vue"
 
 useHead({
-  title: "Projects"
+  title: "Projects",
 })
 </script>
 
