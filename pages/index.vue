@@ -2,7 +2,9 @@
   <NuxtLayout>
     <template #body>
       <div id="home" class="container">
-        <!-- <Cube /> -->
+        <h2>Jon</h2>
+        <h2>Brundage Jr.</h2>
+        <p>Software Engineer. Problem Solver. Life-long Learner.</p>
       </div>
     </template>
   </NuxtLayout>
@@ -12,7 +14,7 @@
 import Cube from "~/components/Cube.vue"
 
 useHead({
-  title: "Jon's Portfolio",
+  title: "jon's portfolio",
 })
 </script>
 

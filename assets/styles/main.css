@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  color: #333333;
 }
 
 h1,
@@ -13,7 +14,11 @@ p,
 a {
   margin: 0;
   padding: 0;
-  color: #333333;
+  color: inherit;
+}
+
+li {
+  list-style-type: none;
 }
 
 h1 {
@@ -21,6 +26,7 @@ h1 {
   font-size: 48px;
   line-height: 110%;
   text-transform: uppercase;
+
 }
 
 h2 {
@@ -67,4 +73,11 @@ a {
 
 .container {
   padding: 24px;
+}
+
+@media (prefers-color-scheme: dark){
+  body {
+    background-color: #333333;
+    color: #fff;
+  }
 }

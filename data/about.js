@@ -10,7 +10,7 @@ export const about = {
   bio2: `Before pivoting to software engineering in 2021, I was a freelance director of photography and camera 
   operator in television for over twelve years. I was lucky enough to travel the globe filming for numerous 
   networks including AMC, HBOMax, NatGeo and Comedy Central. When not building out new websites, I can be 
-  found playing hockey, doing the crossword or going for a family jog with my wife and son. I’ve been in 
+  found playing hockey, doing the crossword or going for a family jog with my wife and kids. I’ve been in 
   Crown Heights, Brooklyn since 2008 and love every adventure that New York City has to offer.`,
   img: headshot,
 };

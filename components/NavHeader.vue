@@ -2,8 +2,8 @@
   <header class="container">
     <NuxtLink to="/">Home </NuxtLink>
     <div class="pages">
-      <NuxtLink to="about">About</NuxtLink>
       <NuxtLink to="projects">Projects</NuxtLink>
+      <NuxtLink to="about">About</NuxtLink>
       <NuxtLink to="contact">Contact</NuxtLink>
     </div>
   </header>
