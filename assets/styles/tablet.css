@@ -51,4 +51,9 @@
   .container {
     padding: 30px;
   }
+  @media (prefers-color-scheme: dark) {
+    a::before {
+      border-bottom: 1px solid #fff;
+    }
+  }
 }

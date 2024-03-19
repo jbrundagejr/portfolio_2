@@ -12,6 +12,7 @@ h5,
 h6,
 p,
 a {
+  font-family: "Grotesk";
   margin: 0;
   padding: 0;
   color: inherit;
@@ -22,11 +23,9 @@ li {
 }
 
 h1 {
-  font-family: "Grotesk";
   font-size: 48px;
   line-height: 110%;
   text-transform: uppercase;
-
 }
 
 h2 {
@@ -44,7 +43,8 @@ h4 {
   line-height: 100%;
 }
 
-h1, a {
+h1,
+a {
   letter-spacing: 0.05em;
 }
 
@@ -75,7 +75,7 @@ a {
   padding: 24px;
 }
 
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark) {
   body {
     background-color: #333333;
     color: #fff;
