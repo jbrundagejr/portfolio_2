@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import NavHeader from "~/components/NavHeader.vue"
+import Header from "~/components/Header.vue"
 import Footer from "~/components/Footer.vue"
 </script>
 
 <template>
 	<div id="app">
+		<Header />
 		<slot name="body"></slot>
 		<Footer />
 	</div>
@@ -16,14 +17,14 @@ import Footer from "~/components/Footer.vue"
 	flex-direction: column;
 	position: relative;
 	border: 1px solid red;
-	width: 100%;
-	padding: 24px;
+	width: calc(100% - 48px);
+	padding: 0 24px;
 }
 
 @media (min-width: 1440px) {
 	#app {
 		width: 1440px;
-		padding: 24px 0;
+		padding: 0;
 		margin: 0 auto;
 	}
 }

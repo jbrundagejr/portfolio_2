@@ -1,19 +1,40 @@
 <script setup lang="ts">
-import Project from "~/components/Project.vue"
-import { projects } from "~/data/projects"
+import { useStore } from "~/store/store"
+import Page from "~/components/Page.vue"
+import { pages } from "~/data/pages"
+import { storeToRefs } from "pinia"
+
+const store = useStore()
+const { currentPage, scrollY } = storeToRefs(store)
+const { setScrollY } = store
 
 useHead({
 	title: "jon's portfolio",
+})
+
+onMounted(() => {
+	window.addEventListener("scroll", () => {
+		setScrollY(window.scrollY)
+	})
 })
 </script>
 
 <template>
 	<NuxtLayout>
 		<template #body>
-			<div id="intro-container">
-				<h1><span>Jon</span> <span>Brundage Jr.</span></h1>
-				<p>Software Engineer. Problem Solver. Life-long Learner.</p>
-			</div>
+			<h2
+				v-if="scrollY > 0"
+				v-for="page in pages"
+				:key="page.title"
+				:class="
+					currentPage === page.title
+						? 'page__header page__header--active fade-in'
+						: 'page__header page__header--passive fade-in'
+				"
+			>
+				{{ page.title }}
+			</h2>
+			<Page v-for="page in pages" :key="page.title" :page="page" />
 			<!--
         <Project
           v-for="project in projects"
@@ -26,11 +47,17 @@ useHead({
 </template>
 
 <style scoped>
-#intro-container {
+.page__header {
+	transition: all 350ms;
+}
+
+.page__header--active {
+	position: sticky;
+	top: 120px;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: calc(100vh - 48px);
+}
+
+.page__header--passive {
+	display: none;
 }
 </style>

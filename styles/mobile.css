@@ -13,7 +13,8 @@ h5,
 h6,
 p,
 a,
-li {
+li,
+button {
 	font-family: "Grotesk";
 	margin: 0;
 	padding: 0;
@@ -55,21 +56,46 @@ a {
 
 a,
 p,
-li {
+li,
+button {
 	font-size: 16px;
 }
 
 p,
+a,
 li {
 	font-family: "Grotesk Light", sans-serif;
 	line-height: 110%;
 }
 
+button,
 a {
-	font-family: "Grotesk Super", sans-serif;
-	line-height: 125%;
-	text-decoration: none;
-	text-transform: uppercase;
+	position: relative;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 8px;
+}
+
+button::before,
+a::before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	bottom: -1px;
+	left: 0;
+	border-bottom: 1px solid var(--black);
+	transform: scaleX(0);
+	transition: transform 350ms ease;
+}
+
+button:hover::before,
+a:hover::before {
+	transform: scaleX(1);
 }
 
 .half__grid {
@@ -77,14 +103,25 @@ a {
 	flex-direction: column;
 	gap: 20px;
 }
-
-.container {
-	padding: 24px;
+.link-icon {
+	width: 24px;
+	height: 24px;
 }
 
 @media (prefers-color-scheme: dark) {
 	body {
 		background-color: var(--black);
 		color: var(--white);
+	}
+
+	.link::before,
+	a::before {
+		border-bottom: 1px solid var(--white);
+	}
+}
+
+@media (hover: hover) and (pointer: fine) {
+	button:hover {
+		cursor: pointer;
 	}
 }

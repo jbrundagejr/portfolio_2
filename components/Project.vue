@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from "~~/store/store"
 import { storeToRefs } from "pinia"
-import { onIntersect } from "~~/composables/onIntersect"
+import { onIntersect } from "~/composables/onIntersect"
 import type { Project } from "~/data/projects"
 
 const store = useStore()

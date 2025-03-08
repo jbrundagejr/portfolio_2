@@ -1,6 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	css: [
+		"~/styles/transitions.css",
 		"~/styles/fonts.css",
 		"~/styles/colors.css",
 		"~/styles/mobile.css",
