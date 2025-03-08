@@ -1,19 +1,22 @@
-<template>
-  <NuxtLink 
-    :to="`/${routeName}`" 
-    :class="route.name === routeName ? 'active' : ''"
-  >
-    {{routeName}}
-  </NuxtLink>
-</template>
+<script setup lang="ts">
+const props = defineProps<{
+	routeName: string
+}>()
 
-<script setup>
-const props = defineProps(['routeName'])
 const route = useRoute()
 </script>
 
+<template>
+	<NuxtLink
+		:to="`/${routeName}`"
+		:class="route.name === routeName ? 'active' : ''"
+	>
+		{{ routeName }}
+	</NuxtLink>
+</template>
+
 <style scoped>
 .active {
-    border-bottom: 1px solid #333333;
+	border-bottom: 1px solid var(--black);
 }
 </style>

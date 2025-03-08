@@ -1,26 +1,36 @@
-<template>
-  <NuxtLayout>
-    <template #body>
-      <div id="home" class="container">
-        <h2>Jon</h2>
-        <h2>Brundage Jr.</h2>
-        <p>Software Engineer. Problem Solver. Life-long Learner.</p>
-      </div>
-    </template>
-  </NuxtLayout>
-</template>
-
-<script setup>
-import Cube from "~/components/Cube.vue"
+<script setup lang="ts">
+import Project from "~/components/Project.vue"
+import { projects } from "~/data/projects"
 
 useHead({
-  title: "jon's portfolio",
+	title: "jon's portfolio",
 })
 </script>
 
+<template>
+	<NuxtLayout>
+		<template #body>
+			<div id="intro-container">
+				<h1><span>Jon</span> <span>Brundage Jr.</span></h1>
+				<p>Software Engineer. Problem Solver. Life-long Learner.</p>
+			</div>
+			<!--
+        <Project
+          v-for="project in projects"
+          :key="project.title"
+          :project="project"
+        />
+      -->
+		</template>
+	</NuxtLayout>
+</template>
+
 <style scoped>
-#cube {
-  width: 100%;
-  height: 100%;
+#intro-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 48px);
 }
 </style>

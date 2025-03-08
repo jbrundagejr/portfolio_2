@@ -8,12 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.15.4"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
+    "@emailjs/browser": "^4.4.1",
     "@pinia/nuxt": "^0.4.6",
-    "chroma-js": "^2.4.2",
     "pinia": "^2.0.28",
     "three": "^0.149.0"
   }

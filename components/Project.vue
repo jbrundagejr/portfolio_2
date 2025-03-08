@@ -1,96 +1,103 @@
-<template>
-  <div
-    ref="step"
-    :id="project.title"
-    :class="currentProject === index ? current : notCurrent"
-  >
-    <img v-if="project.image" :src="project.image" :alt="project.title" />
-    <div v-if="project.title" class="meta__container">
-      <h3>Project Name:</h3>
-      <h3>{{ project.title }}</h3>
-    </div>
-    <div v-if="project.tools.length" class="meta__container">
-      <h3>Tools Used:</h3>
-      <div class="tool__container">
-        <h3 v-for="tool in project.tools" :key="tool">{{ tool }}</h3>
-      </div>
-    </div>
-    <div v-if="project.notes || project.link">
-      <p>{{ project.notes }}</p>
-      <a v-if="project.link" :href="project.link" target="_blank"
-        >View Project</a
-      >
-    </div>
-  </div>
-</template>
-
-<script setup>
-import { ref, onMounted } from "vue"
+<script setup lang="ts">
 import { useStore } from "~~/store/store"
 import { storeToRefs } from "pinia"
 import { onIntersect } from "~~/composables/onIntersect"
+import type { Project } from "~/data/projects"
 
 const store = useStore()
 const { currentProject } = storeToRefs(store)
 
-const step = ref({})
-const observer = ref({})
-const props = defineProps(["project", "index"])
+const props = defineProps<{
+	project: Project
+	index: number
+}>()
 
-const index = props.index
+const { project, index } = toRefs(props)
+
+const step = ref<HTMLElement | null>(null)
+const observer = ref({})
 
 const options = {
-  threshold: 0.5,
+	threshold: 0.5,
 }
 
 const onDownEnter = () => {
-  currentProject.value = index
+	currentProject.value = index.value
 }
 
 const onUpEnter = () => {
-  currentProject.value = index
+	currentProject.value = index.value
 }
 
 onMounted(() => {
-  observer.value = onIntersect({
-    el: step.value,
-    downEnter: onDownEnter,
-    upEnter: onUpEnter,
-    options,
-  })
+	if (step.value) {
+		observer.value = onIntersect({
+			el: step.value,
+			downEnter: onDownEnter,
+			upEnter: onUpEnter,
+			options,
+		})
+	}
 })
 </script>
 
+<template>
+	<div
+		ref="step"
+		v-if="project"
+		:id="project.title"
+		:class="currentProject === index ? 'current' : 'notCurrent'"
+	>
+		<img v-if="project.image" :src="project.image" :alt="project.title" />
+		<div v-if="project.title" class="meta__container">
+			<h3>Project Name:</h3>
+			<h3>{{ project.title }}</h3>
+		</div>
+		<div v-if="project.tools.length" class="meta__container">
+			<h3>Tools Used:</h3>
+			<div class="tool__container">
+				<h3 v-for="tool in project.tools" :key="tool">{{ tool }}</h3>
+			</div>
+		</div>
+		<div v-if="project.notes || project.link">
+			<p>{{ project.notes }}</p>
+			<a v-if="project.link" :href="project.link" target="_blank"
+				>View Project</a
+			>
+		</div>
+	</div>
+</template>
+
 <style scoped>
 .current {
-  opacity: 1;
-  transition: all 350ms;
+	opacity: 1;
+	transition: all 350ms;
 }
 
 .current img {
-  position: sticky;
-  top: 50%;
-  transform: translateX(-50%);
+	position: sticky;
+	top: 50%;
+	transform: translateX(-50%);
 }
 
 .notCurrent {
-  opacity: 0;
+	opacity: 0;
 }
 .meta__container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
 }
 
 .tool__container {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
 }
 
 img {
-  width: 50%;
-  aspect-ratio: 16 /9;
-  object-fit: cover;
+	width: 50%;
+	aspect-ratio: 16 /9;
+	object-fit: cover;
 }
 </style>
