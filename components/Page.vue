@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useStore } from "~/store/store"
+import { useStore } from "~/stores/store"
 import { storeToRefs } from "pinia"
 import { onIntersect } from "~/composables/onIntersect"
 import Projects from "~/components/projects/Projects.vue"

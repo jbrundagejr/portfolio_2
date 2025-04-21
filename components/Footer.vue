@@ -39,25 +39,19 @@ const links = computed(() => {
 
 <style scoped>
 #footer {
-	position: fixed;
+	position: absolute;
 	bottom: 24px;
-	width: calc(100% - 48px);
-	padding: 0 24px;
+	right: 24px;
 	display: flex;
 	justify-content: flex-end;
 	z-index: 5;
 }
+
 #footer ul {
 	display: flex;
 	flex-direction: row;
 	gap: 24px;
 	justify-content: flex-end;
-}
-
-svg {
-	height: 48px;
-	width: 48px;
-	padding: 0;
 }
 
 @media (min-width: 1440px) {
