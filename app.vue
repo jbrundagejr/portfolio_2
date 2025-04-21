@@ -1,5 +1,19 @@
+<script setup lang="ts">
+import { useStore } from "./store/store"
+
+const store = useStore()
+const { getProjects, getAbout, setScrollY } = store
+
+await getProjects()
+await getAbout()
+
+onMounted(async () => {
+	window.addEventListener("scroll", () => {
+		setScrollY(window.scrollY)
+	})
+})
+</script>
+
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+	<NuxtPage />
 </template>

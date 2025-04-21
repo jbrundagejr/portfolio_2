@@ -1,28 +1,36 @@
 <script setup lang="ts">
-import GithubIcon from "./GithubIcon.vue"
+import Resume from "~/public/BrundageResume.pdf"
+import LinkedInIcon from "./icons/LinkedInIcon.vue"
+import GithubIcon from "./icons/GithubIcon.vue"
+import ResumeIcon from "./icons/ResumeIcon.vue"
+
+const links = computed(() => {
+	return [
+		{
+			name: "Resume",
+			href: Resume,
+			icon: ResumeIcon,
+		},
+		{
+			name: "LinkedIn",
+			href: "https://www.linkedin.com/in/jbrundagejr/",
+			icon: LinkedInIcon,
+		},
+		{
+			name: "Github",
+			href: "https://github.com/jbrundagejr",
+			icon: GithubIcon,
+		},
+	]
+})
 </script>
 
 <template>
 	<footer id="footer">
 		<ul>
-			<li>
-				<a
-					href="https://www.linkedin.com/in/jbrundagejr/"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<svg role="img" aria-label="LinkedIn Profile">
-						<use href="/sprites/socialSprites.svg#linkedIn" />
-					</svg>
-				</a>
-			</li>
-			<li>
-				<a
-					href="https://github.com/jbrundagejr"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<GithubIcon />
+			<li v-for="link in links" :key="link.name">
+				<a :href="link.href" target="_blank" rel="noreferrer"
+					><component :is="link.icon" />
 				</a>
 			</li>
 		</ul>

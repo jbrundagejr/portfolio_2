@@ -1,0 +1,44 @@
+[
+	{
+		"title": "Schema Design Website",
+		"tools": ["Nuxt3", "SanityIO"],
+		"image": "/images/schema.png",
+		"notes": "",
+		"link": "https://www.schemadesign.com"
+	},
+	{
+		"title": "TNTP Our Block",
+		"tools": ["React", "Auth0", "SanityIO", "Mapbox", "MaterialUI"],
+		"image": "/images/tntp.png",
+		"notes": "",
+		"link": "https://ourblock.tntp.org/"
+	},
+	{
+		"title": "Asia Society Blackbox of Chinese Politics",
+		"tools": ["Svelte", "d3"],
+		"image": "/images/aspi.png",
+		"notes": "",
+		"link": "https://asiasociety.org/policy-institute/decoding-chinas-20th-party-congress"
+	},
+	{
+		"title": "Sedus Workscape of Tomorrow",
+		"tools": ["Nuxt3", "SanityIO", "d3"],
+		"image": "/images/sedus.png",
+		"notes": "",
+		"link": "https://www.workscapeoftomorrow.com"
+	},
+	{
+		"title": "PEFA Global Report 2022",
+		"tools": ["React", "Gatsby", "i18n"],
+		"image": "/images/pefa.png",
+		"notes": "",
+		"link": "https://www.pefa.org/global-report-2022/en/"
+	},
+	{
+		"title": "Bloomberg NEF 2022",
+		"tools": ["ThreeJS", "d3"],
+		"image": "/images/bloomberg.png",
+		"notes": "",
+		"link": ""
+	}
+]

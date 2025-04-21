@@ -16,7 +16,6 @@ import Footer from "~/components/Footer.vue"
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	border: 1px solid red;
 	width: calc(100% - 48px);
 	padding: 0 24px;
 }

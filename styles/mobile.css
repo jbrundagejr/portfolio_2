@@ -14,11 +14,22 @@ h6,
 p,
 a,
 li,
-button {
+button,
+label,
+input,
+textarea,
+::placeholder {
 	font-family: "Grotesk";
 	margin: 0;
 	padding: 0;
 	color: inherit;
+}
+
+input,
+textarea,
+::placeholder {
+	color: var(--black);
+	background: var(--light-gray);
 }
 
 ul,

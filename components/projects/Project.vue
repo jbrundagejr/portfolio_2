@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useStore } from "~~/store/store"
+import { useStore } from "~/store/store"
 import { storeToRefs } from "pinia"
 import { onIntersect } from "~/composables/onIntersect"
-import type { Project } from "~/data/projects"
+import type { ProjectInterface } from "~/util/types"
 
 const store = useStore()
-const { currentProject } = storeToRefs(store)
+const { projectIndex } = storeToRefs(store)
 
 const props = defineProps<{
-	project: Project
+	project: ProjectInterface
 	index: number
 }>()
 
@@ -22,11 +22,11 @@ const options = {
 }
 
 const onDownEnter = () => {
-	currentProject.value = index.value
+	projectIndex.value = index.value
 }
 
 const onUpEnter = () => {
-	currentProject.value = index.value
+	projectIndex.value = index.value
 }
 
 onMounted(() => {
@@ -46,7 +46,7 @@ onMounted(() => {
 		ref="step"
 		v-if="project"
 		:id="project.title"
-		:class="currentProject === index ? 'current' : 'notCurrent'"
+		:class="projectIndex === index ? 'current' : 'notCurrent'"
 	>
 		<img v-if="project.image" :src="project.image" :alt="project.title" />
 		<div v-if="project.title" class="meta__container">

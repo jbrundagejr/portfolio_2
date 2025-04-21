@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from "~/store/store"
-import { pages } from "~/data/pages"
 import { storeToRefs } from "pinia"
+import { pages } from "~/util/constants"
 
 const store = useStore()
 const { scrollY } = storeToRefs(store)
@@ -10,10 +10,10 @@ const atTopOfPage = computed(() => {
 	return scrollY.value === 0
 })
 
-const handleRouteClick = (e: Event) => {
+const handlepageClick = (e: Event) => {
 	const target = e.target as HTMLButtonElement
-	const route = target.value
-	const el = document.getElementById(route)
+	const page = target.value
+	const el = document.getElementById(page)
 	if (el) {
 		el.scrollIntoView({ behavior: "smooth" })
 	}
@@ -30,13 +30,13 @@ const handleRouteClick = (e: Event) => {
 		</div>
 		<nav v-if="!atTopOfPage" class="header__nav fade-in">
 			<ul>
-				<li v-for="route in pages" :key="route.title">
+				<li v-for="page in pages" :key="page.title">
 					<button
-						@click="handleRouteClick"
+						@click="handlepageClick"
 						class="header__nav__link link"
-						:value="route.title"
+						:value="page.title"
 					>
-						{{ route.title }}
+						{{ page.title }}
 					</button>
 				</li>
 			</ul>

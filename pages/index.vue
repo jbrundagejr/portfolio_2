@@ -1,21 +1,14 @@
 <script setup lang="ts">
 import { useStore } from "~/store/store"
-import Page from "~/components/Page.vue"
-import { pages } from "~/data/pages"
 import { storeToRefs } from "pinia"
+import { pages } from "~/util/constants"
+import Page from "~/components/Page.vue"
 
 const store = useStore()
-const { currentPage, scrollY } = storeToRefs(store)
-const { setScrollY } = store
+const { currentPage } = storeToRefs(store)
 
 useHead({
 	title: "jon's portfolio",
-})
-
-onMounted(() => {
-	window.addEventListener("scroll", () => {
-		setScrollY(window.scrollY)
-	})
 })
 </script>
 
@@ -23,7 +16,6 @@ onMounted(() => {
 	<NuxtLayout>
 		<template #body>
 			<h2
-				v-if="scrollY > 0"
 				v-for="page in pages"
 				:key="page.title"
 				:class="

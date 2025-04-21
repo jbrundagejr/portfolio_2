@@ -1,19 +1,20 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "nuxt": "^3.15.4"
-  },
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@pinia/nuxt": "^0.4.6",
-    "pinia": "^2.0.28",
-    "three": "^0.149.0"
-  }
+	"name": "jons-portfolio",
+	"version": "2.0.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"nuxt": "^3.15.4"
+	},
+	"dependencies": {
+		"@pinia/nuxt": "^0.4.6",
+		"pinia": "^2.0.28"
+	}
 }

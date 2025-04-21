@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { useStore } from "~/store/store"
-import { onIntersect } from "~/composables/onIntersect"
-import type { Page } from "~/data/pages"
 import { storeToRefs } from "pinia"
+import { onIntersect } from "~/composables/onIntersect"
+import Projects from "~/components/projects/Projects.vue"
+import About from "~/components/About.vue"
+import type { PageInterface } from "~/util/types"
 
 const store = useStore()
-const { currentPage } = storeToRefs(store)
+const { currentPage, projects } = storeToRefs(store)
 const { setCurrentPage } = store
 
 const props = defineProps<{
-	page: Page
+	page: PageInterface
 }>()
 
 const { page } = toRefs(props)
@@ -44,7 +46,8 @@ onMounted(() => {
 
 <template>
 	<div :id="page.title" class="page" ref="step">
-		<ContactForm v-if="page.title === 'Contact'" />
+		<Projects v-if="page.title === 'Projects'" />
+		<About v-if="page.title === 'About'" />
 	</div>
 </template>
 
