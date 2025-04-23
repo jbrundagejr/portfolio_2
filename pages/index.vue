@@ -45,7 +45,7 @@ useHead({
 
 .page__header--active {
 	position: sticky;
-	top: 120px;
+	top: 156px;
 	display: flex;
 }
 

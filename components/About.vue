@@ -26,6 +26,7 @@ const { about } = storeToRefs(store)
 	display: flex;
 	flex-direction: column;
 	padding: 0 24px;
+	height: 100vh;
 	gap: 24px;
 	width: calc(100% - 48px);
 	justify-content: center;

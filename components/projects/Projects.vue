@@ -4,16 +4,92 @@ import { storeToRefs } from "pinia"
 import Project from "./Project.vue"
 
 const store = useStore()
-const { projects } = storeToRefs(store)
+const { projects, projectIndex } = storeToRefs(store)
+
+const image = computed(() => {
+	if (projects.value[projectIndex.value]) {
+		return {
+			src: projects.value[projectIndex.value].image,
+			alt: projects.value[projectIndex.value].title,
+		}
+	}
+	return undefined
+})
 </script>
 
 <template>
 	<div class="projects">
-		<Project
-			v-for="(project, index) in projects"
-			:key="project.title"
-			:project="project"
-			:index="index"
-		/>
+		<div class="projects__image-container fade-in">
+			<img v-if="image" :src="image.src" :alt="image.alt" />
+		</div>
+		<div class="projects__copy-container">
+			<Project
+				v-for="(project, index) in projects"
+				:key="project.title"
+				:index="index"
+				:project="project"
+			/>
+		</div>
 	</div>
 </template>
+
+<style scoped>
+.projects {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 25vh 0;
+}
+
+.projects__image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 0;
+	position: sticky;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.projects__image-container img {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+}
+
+.projects__copy-container {
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	gap: 60vh;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 50vh 0;
+}
+
+@media (min-width: 1080px) {
+	.projects {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 64px;
+		padding: 100px 0 300px;
+	}
+
+	.projects__image-container {
+		width: 100%;
+	}
+
+	.projects__copy-container {
+		z-index: 0;
+		gap: 75vh;
+		justify-content: flex-start;
+		align-items: flex-start;
+		text-align: left;
+		padding: 0;
+	}
+}
+</style>

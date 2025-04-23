@@ -1,44 +1,82 @@
 [
 	{
 		"title": "Schema Design Website",
-		"tools": ["Nuxt3", "SanityIO"],
+		"tools": [
+			{
+				"icon": "nuxt",
+				"link": "https://nuxt.com/docs/getting-started/introduction"
+			},
+			{ "icon": "sanity", "link": "https://www.sanity.io/docs?ref=navbar" },
+			{ "icon": "netlify", "link": "https://docs.netlify.com/" }
+		],
 		"image": "/images/schema.png",
-		"notes": "",
-		"link": "https://www.schemadesign.com"
+		"link": "https://www.schemadesign.com",
+		"notes": [""]
 	},
 	{
 		"title": "TNTP Our Block",
-		"tools": ["React", "Auth0", "SanityIO", "Mapbox", "MaterialUI"],
+		"tools": [
+			{ "icon": "react", "link": "https://react.dev/learn" },
+			{ "icon": "auth0", "link": "https://auth0.com/docs" },
+			{ "icon": "sanity", "link": "https://www.sanity.io/docs?ref=navbar" },
+			{ "icon": "i18next", "link": "https://react.i18next.com/" },
+			{ "icon": "mapbox", "link": "https://docs.mapbox.com/" },
+			{ "icon": "material-ui", "link": "https://mui.com/material-ui/" }
+		],
 		"image": "/images/tntp.png",
-		"notes": "",
+		"notes": [""],
 		"link": "https://ourblock.tntp.org/"
 	},
 	{
 		"title": "Asia Society Blackbox of Chinese Politics",
-		"tools": ["Svelte", "d3"],
+		"tools": [
+			{ "icon": "svelte", "link": "https://svelte.dev/docs" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" },
+			{ "icon": "drupal", "link": "https://www.drupal.org/docs/8" }
+		],
 		"image": "/images/aspi.png",
-		"notes": "",
+		"notes": [""],
 		"link": "https://asiasociety.org/policy-institute/decoding-chinas-20th-party-congress"
 	},
 	{
 		"title": "Sedus Workscape of Tomorrow",
-		"tools": ["Nuxt3", "SanityIO", "d3"],
+		"tools": [
+			{
+				"icon": "nuxt",
+				"link": "https://nuxt.com/docs/getting-started/introduction"
+			},
+			{ "icon": "sanity", "link": "https://www.sanity.io/docs?ref=navbar" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" },
+			{ "icon": "firebase", "link": "https://firebase.google.com/docs" }
+		],
 		"image": "/images/sedus.png",
-		"notes": "",
+		"notes": [""],
 		"link": "https://www.workscapeoftomorrow.com"
 	},
 	{
 		"title": "PEFA Global Report 2022",
-		"tools": ["React", "Gatsby", "i18n"],
+		"tools": [
+			{ "icon": "react", "link": "https://react.dev/learn" },
+			{ "icon": "gatsby", "link": "https://www.gatsbyjs.com/docs/" },
+			{ "icon": "i18next", "link": "https://react.i18next.com/" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
+		],
 		"image": "/images/pefa.png",
-		"notes": "",
+		"notes": [""],
 		"link": "https://www.pefa.org/global-report-2022/en/"
 	},
 	{
 		"title": "Bloomberg NEF 2022",
-		"tools": ["ThreeJS", "d3"],
+		"tools": [
+			{
+				"icon": "threejs",
+				"link": "https://threejs.org/manual/#en/installation"
+			},
+			{ "icon": "gsap", "link": "https://gsap.com/docs/v3/" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
+		],
 		"image": "/images/bloomberg.png",
-		"notes": "",
+		"notes": [""],
 		"link": ""
 	}
 ]

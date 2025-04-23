@@ -35,6 +35,7 @@ const handlepageClick = (e: Event) => {
 						@click="handlepageClick"
 						class="header__nav__link link"
 						:value="page.title"
+						:aria-label="`Scroll to ${page.title}`"
 					>
 						{{ page.title }}
 					</button>
@@ -66,6 +67,12 @@ const handlepageClick = (e: Event) => {
 	display: flex;
 	flex-direction: row;
 	gap: 12px;
+}
+
+@media (min-width: 1080px) {
+	.header__title {
+		min-height: 108px;
+	}
 }
 
 @media (prefers-color-scheme: dark) {

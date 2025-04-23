@@ -18,7 +18,8 @@ const step = ref<HTMLElement | null>(null)
 const observer = ref({})
 
 const options = {
-	threshold: 0.5,
+	threshold: 0.3,
+	rootMargin: "-20% 0% -20%",
 }
 
 const onDownEnter = () => {
@@ -42,62 +43,21 @@ onMounted(() => {
 </script>
 
 <template>
-	<div
-		ref="step"
-		v-if="project"
-		:id="project.title"
-		:class="projectIndex === index ? 'current' : 'notCurrent'"
-	>
-		<img v-if="project.image" :src="project.image" :alt="project.title" />
+	<div class="project" ref="step">
 		<div v-if="project.title" class="meta__container">
-			<h3>Project Name:</h3>
 			<h3>{{ project.title }}</h3>
 		</div>
 		<div v-if="project.tools.length" class="meta__container">
-			<h3>Tools Used:</h3>
-			<div class="tool__container">
-				<h3 v-for="tool in project.tools" :key="tool">{{ tool }}</h3>
-			</div>
+			<h4>Tools Used:</h4>
+			<ul class="tool__container">
+				<a v-for="tool in project.tools" :key="tool.icon" :href="tool.link">{{ tool.icon }}</a>
+			</ul>
+		</div class="">
+		<div>
+			<p v-for="(note, i) in project.notes" :key="i">{{ note }}</p>
 		</div>
-		<div v-if="project.notes || project.link">
-			<p>{{ project.notes }}</p>
-			<a v-if="project.link" :href="project.link" target="_blank"
-				>View Project</a
-			>
-		</div>
+		<a v-if="project.link" :href="project.link" target="_blank">View Project</a>
 	</div>
 </template>
 
-<style scoped>
-.current {
-	opacity: 1;
-	transition: all 350ms;
-}
-
-.current img {
-	position: sticky;
-	top: 50%;
-	transform: translateX(-50%);
-}
-
-.notCurrent {
-	opacity: 0;
-}
-.meta__container {
-	display: flex;
-	flex-direction: row;
-	gap: 20px;
-}
-
-.tool__container {
-	display: flex;
-	flex-direction: row;
-	gap: 15px;
-}
-
-img {
-	width: 50%;
-	aspect-ratio: 16 /9;
-	object-fit: cover;
-}
-</style>
+<style scoped></style>

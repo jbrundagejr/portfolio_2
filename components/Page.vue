@@ -20,8 +20,8 @@ const step = ref<HTMLElement | null>(null)
 const observer = ref({})
 
 const options = {
-	threshold: 0.5,
-	// rootMargin: "20% 0% 20% 0%",
+	threshold: 0.1,
+	rootMargin: "-20% 0% -20%",
 }
 
 const onDownEnter = () => {
@@ -53,9 +53,7 @@ onMounted(() => {
 
 <style scoped>
 .page {
-	height: 100vh;
 	width: 100%;
-	border: 1px solid blue;
 	display: flex;
 	justify-content: center;
 	align-items: center;

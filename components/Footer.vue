@@ -39,7 +39,7 @@ const links = computed(() => {
 
 <style scoped>
 #footer {
-	position: absolute;
+	position: sticky;
 	bottom: 24px;
 	right: 24px;
 	display: flex;

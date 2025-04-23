@@ -2,11 +2,16 @@ export interface PageInterface {
 	title: string
 }
 
+export interface Tool {
+	icon: string
+	link: string
+}
+
 export interface ProjectInterface {
 	title: string
-	tools: string[]
+	tools: Tool[]
 	image: string
-	notes: string
+	notes: string[]
 	link: string
 }
 
