@@ -53,11 +53,30 @@ onMounted(() => {
 				<a v-for="tool in project.tools" :key="tool.icon" :href="tool.link">{{ tool.icon }}</a>
 			</ul>
 		</div class="">
-		<div>
+		<div class="notes__container">
 			<p v-for="(note, i) in project.notes" :key="i">{{ note }}</p>
 		</div>
-		<a v-if="project.link" :href="project.link" target="_blank">View Project</a>
+		<span><a v-if="project.link" :href="project.link" target="_blank">View Project</a></span>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.project {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+
+.notes__container {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.tool__container {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+</style>

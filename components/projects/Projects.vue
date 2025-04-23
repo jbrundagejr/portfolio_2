@@ -75,7 +75,7 @@ const image = computed(() => {
 	.projects {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 64px;
+		gap: 32px;
 		padding: 100px 0 300px;
 	}
 
@@ -85,7 +85,7 @@ const image = computed(() => {
 
 	.projects__copy-container {
 		z-index: 0;
-		gap: 75vh;
+		gap: 35vh;
 		justify-content: flex-start;
 		align-items: flex-start;
 		text-align: left;

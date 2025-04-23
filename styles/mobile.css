@@ -90,6 +90,10 @@ button {
 	padding: 8px;
 }
 
+a {
+	text-decoration: none;
+}
+
 button::before,
 a::before {
 	content: "";
