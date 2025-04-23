@@ -19,7 +19,9 @@ label,
 input,
 textarea,
 ::placeholder {
-	font-family: "Grotesk";
+	font-family: "Karla", sans-serif;
+	font-weight: 400;
+	line-height: 130%;
 	margin: 0;
 	padding: 0;
 	color: inherit;
@@ -75,8 +77,9 @@ button {
 p,
 a,
 li {
-	font-family: "Grotesk Light", sans-serif;
-	line-height: 110%;
+	font-family: "Karla", sans-serif;
+	line-height: 130%;
+	font-weight: 200;
 }
 
 button,

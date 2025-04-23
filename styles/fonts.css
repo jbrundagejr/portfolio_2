@@ -1,38 +1,51 @@
 @font-face {
-  font-family: "Grotesk";
-  src: url("/fonts/Grotesk.otf") format("opentype");
-  font-display: swap;
+	font-family: "Grotesk";
+	src: url("/fonts/Grotesk.otf") format("opentype");
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Grotesk";
-  src: url("/fonts/Grotesk-Regular-Italic.otf") format("opentype");
-  font-display: swap;
-  font-style: italic;
+	font-family: "Grotesk";
+	src: url("/fonts/Grotesk-Regular-Italic.otf") format("opentype");
+	font-display: swap;
+	font-style: italic;
 }
 
 @font-face {
-  font-family: "Grotesk Light";
-  src: url("/fonts/Grotesk-Light.otf") format("opentype");
-  font-display: swap;
+	font-family: "Grotesk Light";
+	src: url("/fonts/Grotesk-Light.otf") format("opentype");
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Grotesk Light";
-  src: url("/fonts/Grotesk-Light-Italic.otf") format("opentype");
-  font-display: swap;
-  font-style: italic;
+	font-family: "Grotesk Light";
+	src: url("/fonts/Grotesk-Light-Italic.otf") format("opentype");
+	font-display: swap;
+	font-style: italic;
 }
 
 @font-face {
-  font-family: "Grotesk Super";
-  src: url("/fonts/Grotesk-Super.otf") format("opentype");
-  font-display: swap;
+	font-family: "Grotesk Super";
+	src: url("/fonts/Grotesk-Super.otf") format("opentype");
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Grotesk Super";
-  src: url("/fonts/Grotesk-Super-Italic.otf") format("opentype");
-  font-display: swap;
-  font-style: italic;
+	font-family: "Grotesk Super";
+	src: url("/fonts/Grotesk-Super-Italic.otf") format("opentype");
+	font-display: swap;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Karla";
+	src: url("/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Karla";
+	src: url("/fonts/Karla-Italic-VariableFont_wght.ttf") format("truetype");
+	font-display: swap;
+	font-style: italic;
 }

@@ -13,7 +13,7 @@
 		"link": "https://www.schemadesign.com",
 		"notes": [
 			"When my CEO asked me to build a new website for our company, I was excited to take on the challenge and honored to be trusted with it.",
-			"I wanted to make the site as lean as possible to avoid unnecessary and so I built all the UI components from scratch, with accessibility and performance in mind.",
+			"I wanted to make the site as lean as possible to avoid unnecessary code bloat and dependencies, so I built all the UI components from scratch, with accessibility and performance in mind.",
 			"I also wanted to make the site as fast as possible, so I used Nuxt 3's static site generation feature to pre-render all the pages and improve SEO.",
 			"The result is a fast, responsive, and accessible website that showcases our work and values."
 		]
