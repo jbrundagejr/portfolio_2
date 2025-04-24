@@ -13,13 +13,26 @@ const atTopOfPage = computed(() => {
 const handlepageClick = (e: Event) => {
 	const target = e.target as HTMLButtonElement
 	const page = target.value
-	const el = document.getElementById(page)
-	if (el) {
-		el.scrollIntoView({ behavior: "smooth" })
+	if (page === "About") {
+		const el = document.getElementById(page)
+		if (el) {
+			el.scrollIntoView({ behavior: "smooth" })
+		}
+	} else {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		})
 	}
 }
 
-const pageTitle = computed(() => {})
+const linksToRender = computed(() => {
+	if (currentPage.value === "Projects") {
+		return pages.filter((page) => page.title === "About")
+	} else {
+		return pages.filter((page) => page.title === "Projects")
+	}
+})
 </script>
 
 <template>
@@ -31,8 +44,8 @@ const pageTitle = computed(() => {})
 					Software Engineer. Problem Solver. Life-long Learner.
 				</p>
 			</div>
-			<ul v-if="!atTopOfPage" class="header__nav fade-in">
-				<li v-for="page in pages" :key="page.title">
+			<ul class="header__nav fade-in">
+				<li v-for="page in linksToRender" :key="page.title">
 					<button
 						@click="handlepageClick"
 						class="header__nav__link link"

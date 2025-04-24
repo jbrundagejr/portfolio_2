@@ -63,5 +63,5 @@ const component = computed(() => {
 </script>
 
 <template>
-	<component :is="component" />
+	<component v-if="component" :is="component" />
 </template>
