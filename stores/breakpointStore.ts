@@ -2,7 +2,7 @@ import { defineStore } from "pinia"
 import { Breakpoints } from "~/util/enums"
 
 export const useBreakpointStore = defineStore("breakpoint", () => {
-	const windowWidth = ref(window.innerWidth)
+	const windowWidth = ref(window ? window.innerWidth : 0)
 
 	const setWindowWidth = (width: number) => {
 		windowWidth.value = width
@@ -12,6 +12,10 @@ export const useBreakpointStore = defineStore("breakpoint", () => {
 		() =>
 			windowWidth.value >= Breakpoints.TABLET &&
 			windowWidth.value < Breakpoints.DESKTOP
+	)
+
+	const isTabletOrGreater = computed(
+		() => windowWidth.value >= Breakpoints.TABLET
 	)
 	const isDesktop = computed(
 		() =>
@@ -32,6 +36,7 @@ export const useBreakpointStore = defineStore("breakpoint", () => {
 		setWindowWidth,
 		isMobile,
 		isTablet,
+		isTabletOrGreater,
 		isDesktop,
 		isWideDesktop,
 		isSuperWideDesktop,

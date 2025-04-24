@@ -4,7 +4,6 @@ import SanityIcon from "./icons/SanityIcon.vue"
 import NetlifyIcon from "./icons/NetlifyIcon.vue"
 import ReactIcon from "./icons/ReactIcon.vue"
 import Auth0Icon from "./icons/Auth0Icon.vue"
-import i18nextIcon from "./icons/i18nextIcon.vue"
 import MapboxIcon from "./icons/MapboxIcon.vue"
 import MaterialUIIcon from "./icons/MaterialUIIcon.vue"
 import SvelteIcon from "./icons/SvelteIcon.vue"
@@ -34,8 +33,6 @@ const component = computed(() => {
 			return ReactIcon
 		case "auth0":
 			return Auth0Icon
-		case "i18next":
-			return i18nextIcon
 		case "mapbox":
 			return MapboxIcon
 		case "material-ui":

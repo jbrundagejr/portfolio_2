@@ -80,20 +80,16 @@ onMounted(() => {
 	padding: 24px;
 }
 
-.project:first-child {
-	padding: 24px 0 0;
-}
-
 .project__header {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 12px;
 }
 
 .meta__container {
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 8px;
 }
 
 .notes__container {
@@ -105,6 +101,7 @@ onMounted(() => {
 .tool__container {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	gap: 20px;
 }
 
@@ -112,6 +109,14 @@ onMounted(() => {
 	.project {
 		background: none;
 		padding: 0;
+	}
+
+	.project:first-child {
+		padding: 24px 0 0;
+	}
+
+	.tool__container {
+		justify-content: flex-start;
 	}
 }
 </style>
