@@ -19,8 +19,16 @@ const image = computed(() => {
 
 <template>
 	<div class="projects">
-		<div class="projects__image-container fade-in">
-			<img v-if="image" :src="image.src" :alt="image.alt" />
+		<div v-if="image" class="projects__image-container fade-in">
+			<transition name="fade">
+				<img
+					v-if="image"
+					:src="image.src"
+					:alt="image.alt"
+					:key="image.src"
+					class="projects__image"
+				/>
+			</transition>
 		</div>
 		<div class="projects__copy-container">
 			<Project
@@ -58,6 +66,10 @@ const image = computed(() => {
 	height: auto;
 	object-fit: cover;
 	object-position: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
 }
 
 .projects__copy-container {
@@ -68,7 +80,22 @@ const image = computed(() => {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	padding: 50vh 0;
+	/* padding: 50vh 0; */
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.35s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+	opacity: 1;
 }
 
 @media (min-width: 1080px) {
@@ -76,7 +103,8 @@ const image = computed(() => {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 32px;
-		padding: 100px 0 300px;
+		padding: 0 0 25vh;
+		/* padding: 100px 0 300px; */
 	}
 
 	.projects__image-container {

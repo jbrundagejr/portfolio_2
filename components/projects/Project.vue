@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useStore } from "~/stores/store"
 import { storeToRefs } from "pinia"
+import Tool from "../Tool.vue"
 import { onIntersect } from "~/composables/onIntersect"
 import type { ProjectInterface } from "~/util/types"
 
@@ -44,19 +45,29 @@ onMounted(() => {
 
 <template>
 	<div class="project" ref="step">
-		<div v-if="project.title" class="meta__container">
-			<h3>{{ project.title }}</h3>
+		<div class="project__header">
+			<span v-if="project.link">
+				<a class="project-link" :href="project.link" target="_blank">{{
+					project.title
+				}}</a>
+			</span>
+			<h3 v-else>{{ project.title }}</h3>
+			<div v-if="project.tools.length" class="meta__container">
+				<h4>Tools Used:</h4>
+				<ul class="tool__container">
+					<a
+						v-for="tool in project.tools"
+						:key="tool.icon"
+						:href="tool.link"
+						target="_blank"
+						><Tool :icon="tool.icon"
+					/></a>
+				</ul>
+			</div>
 		</div>
-		<div v-if="project.tools.length" class="meta__container">
-			<h4>Tools Used:</h4>
-			<ul class="tool__container">
-				<a v-for="tool in project.tools" :key="tool.icon" :href="tool.link">{{ tool.icon }}</a>
-			</ul>
-		</div class="">
 		<div class="notes__container">
 			<p v-for="(note, i) in project.notes" :key="i">{{ note }}</p>
 		</div>
-		<span><a v-if="project.link" :href="project.link" target="_blank">View Project</a></span>
 	</div>
 </template>
 
@@ -65,8 +76,25 @@ onMounted(() => {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 24px;
 }
 
+.project:first-child {
+	padding: 24px 0 0;
+}
+
+.project__header {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.meta__container {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
 
 .notes__container {
 	display: flex;
@@ -77,6 +105,13 @@ onMounted(() => {
 .tool__container {
 	display: flex;
 	flex-direction: row;
-	gap: 12px;
+	gap: 20px;
+}
+
+@media (min-width: 1080px) {
+	.project {
+		background: none;
+		padding: 0;
+	}
 }
 </style>

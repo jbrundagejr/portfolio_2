@@ -1,5 +1,43 @@
 [
 	{
+		"title": "TNTP Our Block",
+		"tools": [
+			{ "icon": "react", "link": "https://react.dev/learn" },
+			{ "icon": "auth0", "link": "https://auth0.com/docs" },
+			{ "icon": "sanity", "link": "https://www.sanity.io/docs?ref=navbar" },
+			{ "icon": "i18next", "link": "https://react.i18next.com/" },
+			{ "icon": "mapbox", "link": "https://docs.mapbox.com/" },
+			{ "icon": "material-ui", "link": "https://mui.com/material-ui/" }
+		],
+		"image": "/images/tntp.png",
+		"notes": [
+			"This project was an overhaul of an existing prototype built in React and required the addition of Auth0 for user management and authentication. I had to learn how to fire event hooks from Auth0 to keep our user profile data in sync with our Sanity instance.",
+			"The original prototype was using Airtable for a backend which isn't scalable in terms of network calls, so I switched it to Sanity for a more robust solution and a client-friendly interface.",
+			"Since the site was already established in terms of styling, I made use the existing Material UI components to scale the design system of the site."
+		],
+		"link": "https://ourblock.tntp.org/"
+	},
+	{
+		"title": "Asia Society Global Public Opinion on China",
+		"tools": [
+			{ "icon": "svelte", "link": "https://svelte.dev/docs" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" },
+			{ "icon": "drupal", "link": "https://www.drupal.org/docs/8" },
+			{ "icon": "aws", "link": "https://aws.amazon.com/documentation/" },
+			{
+				"icon": "google-sheets",
+				"link": "https://www.google.com/sheets/about/"
+			}
+		],
+		"image": "/images/aspi.png",
+		"notes": [
+			"For this project, the client wanted us to build a custom visualization, and then incoporate it into their existing Drupal site. I chose Svelte for the build because it is a lightweight framework that would have minimal build size.",
+			"We also used Google Sheets as a backend, with an AWS Lambda function to pull the data from the sheet and write out a JSON file in a S3 bucket that the Svelte app could read.",
+			"The coolest part of this build was using D3's force simulation to create geometric representations of the world's GDP and population over time and how opinions have changed on China over the last 25 years."
+		],
+		"link": "https://asiasociety.org/policy-institute/global-public-opinion-china"
+	},
+	{
 		"title": "Schema Design Website",
 		"tools": [
 			{
@@ -15,33 +53,28 @@
 			"When my CEO asked me to build a new website for our company, I was excited to take on the challenge and honored to be trusted with it.",
 			"I wanted to make the site as lean as possible to avoid unnecessary code bloat and dependencies, so I built all the UI components from scratch, with accessibility and performance in mind.",
 			"I also wanted to make the site as fast as possible, so I used Nuxt 3's static site generation feature to pre-render all the pages and improve SEO.",
-			"The result is a fast, responsive, and accessible website that showcases our work and values."
+			"To streamline deployment, we use Netlify as our hosting provider. Integrating our repo with Netlify allows us to automatically and easily deploy the site whenever content updates are needed."
 		]
 	},
 	{
-		"title": "TNTP Our Block",
+		"title": "Bloomberg NEF 2022",
 		"tools": [
-			{ "icon": "react", "link": "https://react.dev/learn" },
-			{ "icon": "auth0", "link": "https://auth0.com/docs" },
-			{ "icon": "sanity", "link": "https://www.sanity.io/docs?ref=navbar" },
-			{ "icon": "i18next", "link": "https://react.i18next.com/" },
-			{ "icon": "mapbox", "link": "https://docs.mapbox.com/" },
-			{ "icon": "material-ui", "link": "https://mui.com/material-ui/" }
+			{
+				"icon": "threejs",
+				"link": "https://threejs.org/manual/#en/installation"
+			},
+			{ "icon": "gsap", "link": "https://gsap.com/docs/v3/" },
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
 		],
-		"image": "/images/tntp.png",
-		"notes": [""],
-		"link": "https://ourblock.tntp.org/"
-	},
-	{
-		"title": "Asia Society Blackbox of Chinese Politics",
-		"tools": [
-			{ "icon": "svelte", "link": "https://svelte.dev/docs" },
-			{ "icon": "d3", "link": "https://d3js.org/getting-started" },
-			{ "icon": "drupal", "link": "https://www.drupal.org/docs/8" }
+		"image": "/images/bloomberg.png",
+		"notes": [
+			"This project was for the Bloomberg NEF 2022 conference, which featured multiple live installations of 3D data visualizations.",
+			"I was responsible for two animations, one projecting how much Co2 emissions will be captured globally by 2070, and the second analzying how much countries have spent on tech venture capitalism over the last 14 years.",
+			"I used a phsyics library in conjunction with Three.js to simulate carbon particles floating up into a container to show how much a given method will capture.",
+			"For the VC visualization, I used GSAP to animate distinct towers of six by six bricks falling per country per grid.",
+			"The result were two stunning visualizations that made abstract data come to life in a way that was engaging and informative."
 		],
-		"image": "/images/aspi.png",
-		"notes": [""],
-		"link": "https://asiasociety.org/policy-institute/decoding-chinas-20th-party-congress"
+		"link": ""
 	},
 	{
 		"title": "Sedus Workscape of Tomorrow",
@@ -71,21 +104,11 @@
 			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
 		],
 		"image": "/images/pefa.png",
-		"notes": [""],
-		"link": "https://www.pefa.org/global-report-2022/en/"
-	},
-	{
-		"title": "Bloomberg NEF 2022",
-		"tools": [
-			{
-				"icon": "threejs",
-				"link": "https://threejs.org/manual/#en/installation"
-			},
-			{ "icon": "gsap", "link": "https://gsap.com/docs/v3/" },
-			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
+		"notes": [
+			"The project was an update to an on-going report we helped build for the World Bank.",
+			"The site uses multiple charts built in D3, and I had to build two new one for this release.",
+			"The site relies on Gatsby's static site generation to improve performance and SEO, as well as i18next for localization."
 		],
-		"image": "/images/bloomberg.png",
-		"notes": [""],
-		"link": ""
+		"link": "https://www.pefa.org/global-report-2022/en/"
 	}
 ]

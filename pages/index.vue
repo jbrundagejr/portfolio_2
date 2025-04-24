@@ -15,17 +15,6 @@ useHead({
 <template>
 	<NuxtLayout>
 		<template #body>
-			<h2
-				v-for="page in pages"
-				:key="page.title"
-				:class="
-					currentPage === page.title
-						? 'page__header page__header--active fade-in'
-						: 'page__header page__header--passive fade-in'
-				"
-			>
-				{{ page.title }}
-			</h2>
 			<Page v-for="page in pages" :key="page.title" :page="page" />
 			<!--
         <Project

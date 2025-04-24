@@ -40,11 +40,24 @@ const links = computed(() => {
 <style scoped>
 #footer {
 	position: sticky;
-	bottom: 24px;
+	bottom: 0;
 	right: 24px;
 	display: flex;
 	justify-content: flex-end;
 	z-index: 5;
+	background: var(--white);
+	padding: 24px 0;
+}
+
+#footer::after {
+	content: "";
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 24px;
+	background: linear-gradient(to top, var(--white) 0%, transparent 100%);
+	pointer-events: none;
 }
 
 #footer ul {
@@ -54,11 +67,13 @@ const links = computed(() => {
 	justify-content: flex-end;
 }
 
-@media (min-width: 1440px) {
+@media (prefers-color-scheme: dark) {
 	#footer {
-		width: 1440px;
-		padding: 0;
-		margin: 0 auto;
+		background: var(--black);
+	}
+
+	#footer::after {
+		background: linear-gradient(to top, var(--black) 0%, transparent 100%);
 	}
 }
 </style>

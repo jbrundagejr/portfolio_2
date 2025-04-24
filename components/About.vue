@@ -45,6 +45,7 @@ const { about } = storeToRefs(store)
 		gap: 32px;
 		padding: 0 48px;
 		width: calc(100% - 96px);
+		height: calc(100vh - 228px);
 	}
 }
 </style>
