@@ -16,14 +16,12 @@ import Footer from "~/components/Footer.vue"
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: calc(100% - 48px);
-	padding: 0 24px;
+	width: 100%;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1680px) {
 	#app {
-		width: 1440px;
-		padding: 0;
+		width: 1680px;
 		margin: 0 auto;
 	}
 }

@@ -11,10 +11,10 @@ const { currentPage, projects } = storeToRefs(store)
 const { setCurrentPage } = store
 
 const props = defineProps<{
-	page: PageInterface
+	title: string
 }>()
 
-const { page } = toRefs(props)
+const { title } = toRefs(props)
 
 const step = ref<HTMLElement | null>(null)
 const observer = ref({})
@@ -25,11 +25,11 @@ const options = {
 }
 
 const onDownEnter = () => {
-	setCurrentPage(page.value.title)
+	setCurrentPage(title.value)
 }
 
 const onUpEnter = () => {
-	setCurrentPage(page.value.title)
+	setCurrentPage(title.value)
 }
 
 onMounted(() => {
@@ -45,9 +45,8 @@ onMounted(() => {
 </script>
 
 <template>
-	<div :id="page.title" class="page" ref="step">
-		<Projects v-if="page.title === 'Projects'" />
-		<About v-if="page.title === 'About'" />
+	<div :id="title" class="page" ref="step">
+		<slot name="content" />
 	</div>
 </template>
 

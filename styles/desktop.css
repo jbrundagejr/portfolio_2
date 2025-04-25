@@ -13,19 +13,15 @@
 		font-size: 48px;
 	}
 
-	h4 {
-		font-size: 12px;
+	p,
+	a,
+	li,
+	button {
+		font-size: 20px;
 	}
 
 	.tool-icon {
 		height: 48px;
 		width: 48px;
-	}
-}
-
-@media (min-width: 1680px) {
-	body {
-		width: 1680px;
-		margin: 0 auto;
 	}
 }

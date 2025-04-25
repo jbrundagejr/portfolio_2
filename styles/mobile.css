@@ -59,7 +59,7 @@ h3 {
 }
 
 h4 {
-	font-size: 12px;
+	font-size: 20px;
 	line-height: 100%;
 	text-transform: uppercase;
 	font-weight: 600;
@@ -74,7 +74,7 @@ a,
 p,
 li,
 button {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 p,
@@ -138,8 +138,8 @@ a:hover::before {
 }
 
 .tool-icon {
-	height: 24px;
-	width: 24px;
+	height: 36px;
+	width: 36px;
 	color: var(--black);
 }
 

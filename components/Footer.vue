@@ -41,12 +41,12 @@ const links = computed(() => {
 #footer {
 	position: sticky;
 	bottom: 0;
-	right: 24px;
 	display: flex;
 	justify-content: flex-end;
 	z-index: 5;
 	background: var(--white);
-	padding: 24px 0;
+	padding: 24px;
+	width: calc(100% - 48px);
 }
 
 #footer::after {

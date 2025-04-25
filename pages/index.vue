@@ -1,11 +1,6 @@
 <script setup lang="ts">
-import { useStore } from "~/stores/store"
-import { storeToRefs } from "pinia"
-import { pages } from "~/util/constants"
-import Page from "~/components/Page.vue"
-
-const store = useStore()
-const { currentPage } = storeToRefs(store)
+import Projects from "~/components/projects/Projects.vue"
+import About from "~/components/About.vue"
 
 useHead({
 	title: "jon's portfolio",
@@ -15,14 +10,8 @@ useHead({
 <template>
 	<NuxtLayout>
 		<template #body>
-			<Page v-for="page in pages" :key="page.title" :page="page" />
-			<!--
-        <Project
-          v-for="project in projects"
-          :key="project.title"
-          :project="project"
-        />
-      -->
+			<Projects />
+			<About />
 		</template>
 	</NuxtLayout>
 </template>

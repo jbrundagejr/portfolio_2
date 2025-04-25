@@ -8,9 +8,7 @@ const store = useStore()
 const { scrollY, currentPage } = storeToRefs(store)
 
 const breakPointStore = useBreakpointStore()
-const { isTabletOrGreater } = storeToRefs(breakPointStore)
-
-console.log(isTabletOrGreater.value)
+const { isMobile } = storeToRefs(breakPointStore)
 
 const atTopOfPage = computed(() => {
 	return scrollY.value === 0
@@ -47,12 +45,8 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	<header id="header">
 		<div class="header__header">
 			<div class="header__title">
-				<h1 v-if="isTabletOrGreater">Jon Brundage Jr.</h1>
-				<h1 v-if="!isTabletOrGreater" class="h1--mobile">
-					<span>Jon</span><span class="last-name">Brundage</span
-					><span class="suffix">Jr.</span>
-				</h1>
-				<span v-if="atTopOfPage || !isTabletOrGreater" class="tag-line fade-in">
+				<h1>Jon Brundage Jr.</h1>
+				<span v-if="atTopOfPage || !isMobile" class="tag-line fade-in">
 					<p v-for="line in tagline" :key="line">{{ line }}</p>
 				</span>
 			</div>
@@ -80,6 +74,9 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	padding: 24px 0 0;
 	z-index: 5;
 	background: var(--white);
+	position: sticky;
+	top: 0;
+	left: 0;
 }
 
 .h1--mobile {
@@ -138,9 +135,6 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 
 @media (min-width: 768px) {
 	#header {
-		position: sticky;
-		top: 0;
-		left: 0;
 	}
 
 	.header__header {

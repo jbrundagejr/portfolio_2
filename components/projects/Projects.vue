@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { useStore } from "~/stores/store"
 import { storeToRefs } from "pinia"
+import Page from "../Page.vue"
 import Project from "./Project.vue"
 
 const store = useStore()
 const { projects, projectIndex } = storeToRefs(store)
 
 const image = computed(() => {
-	if (projects.value[projectIndex.value]) {
+	if (projectIndex.value && projects.value[projectIndex.value]) {
 		return {
 			src: projects.value[projectIndex.value].image,
 			alt: projects.value[projectIndex.value].title,
@@ -18,27 +19,31 @@ const image = computed(() => {
 </script>
 
 <template>
-	<div class="projects">
-		<div v-if="image" class="projects__image-container fade-in">
-			<transition name="fade">
-				<img
-					v-if="image"
-					:src="image.src"
-					:alt="image.alt"
-					:key="image.src"
-					class="projects__image"
-				/>
-			</transition>
-		</div>
-		<div class="projects__copy-container">
-			<Project
-				v-for="(project, index) in projects"
-				:key="project.title"
-				:index="index"
-				:project="project"
-			/>
-		</div>
-	</div>
+	<Page title="Projects">
+		<template #content>
+			<div class="projects">
+				<div v-if="image" class="projects__image-container fade-in">
+					<transition name="fade">
+						<img
+							v-if="image"
+							:src="image.src"
+							:alt="image.alt"
+							:key="image.src"
+							class="projects__image"
+						/>
+					</transition>
+				</div>
+				<div class="projects__copy-container">
+					<Project
+						v-for="(project, index) in projects"
+						:key="project.title"
+						:index="index"
+						:project="project"
+					/>
+				</div>
+			</div>
+		</template>
+	</Page>
 </template>
 
 <style scoped>
@@ -80,7 +85,7 @@ const image = computed(() => {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	/* padding: 50vh 0; */
+	padding: 50vh 0;
 }
 
 .fade-enter-active,

@@ -2,23 +2,28 @@
 import { useStore } from "~/stores/store"
 import { storeToRefs } from "pinia"
 import { BASE_URL } from "~/util/constants"
+import Page from "./Page.vue"
 
 const store = useStore()
 const { about } = storeToRefs(store)
 </script>
 
 <template>
-	<div v-if="about" class="about">
-		<img
-			v-if="about.img"
-			:src="`${BASE_URL}${about.img}`"
-			alt="Jon Brundage Jr."
-		/>
-		<div class="about__bio">
-			<p>{{ about.bio1 }}</p>
-			<p>{{ about.bio2 }}</p>
-		</div>
-	</div>
+	<Page title="About">
+		<template #content>
+			<div v-if="about" class="about">
+				<img
+					v-if="about.img"
+					:src="`${BASE_URL}${about.img}`"
+					alt="Jon Brundage Jr."
+				/>
+				<div class="about__bio">
+					<p>{{ about.bio1 }}</p>
+					<p>{{ about.bio2 }}</p>
+				</div>
+			</div>
+		</template>
+	</Page>
 </template>
 
 <style scoped>
