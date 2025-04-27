@@ -32,7 +32,7 @@ const { about } = storeToRefs(store)
 	flex-direction: column;
 	height: 100vh;
 	gap: 24px;
-	width: calc(100% - 48px);
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 }
@@ -41,6 +41,14 @@ const { about } = storeToRefs(store)
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
+	padding: 0 0 24px;
+}
+
+.about img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: cover;
 }
 
 @media (min-width: 1080px) {

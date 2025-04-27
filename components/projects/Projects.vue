@@ -5,10 +5,18 @@ import Page from "../Page.vue"
 import Project from "./Project.vue"
 
 const store = useStore()
-const { projects, projectIndex } = storeToRefs(store)
+const { projects, projectIndex, scrollY } = storeToRefs(store)
+const { setProjectIndex } = store
 
 const image = computed(() => {
-	if (projectIndex.value && projects.value[projectIndex.value]) {
+	if (scrollY.value === 0) {
+		setProjectIndex(0)
+		return {
+			src: projects.value[0].image,
+			alt: projects.value[0].title,
+		}
+	}
+	if (projectIndex.value !== null && projects.value[projectIndex.value]) {
 		return {
 			src: projects.value[projectIndex.value].image,
 			alt: projects.value[projectIndex.value].title,

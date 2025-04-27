@@ -15,6 +15,7 @@ import ThreeIcon from "./icons/ThreeIcon.vue"
 import GSAPIcon from "./icons/GSAPIcon.vue"
 import GatsbyIcon from "./icons/GatsbyIcon.vue"
 import I18NextIcon from "./icons/I18NextIcon.vue"
+import ThreeJS from "./icons/ThreeJS.vue"
 
 const props = defineProps<{
 	icon: string
@@ -49,7 +50,7 @@ const component = computed(() => {
 		case "google-sheets":
 			return GoogleIcon
 		case "threejs":
-			return ThreeIcon
+			return ThreeJS
 		case "i18next":
 			return I18NextIcon
 		case "gsap":

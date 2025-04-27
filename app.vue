@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { useStore } from "./stores/store"
-
-const loaded = ref(false)
+import { storeToRefs } from "pinia"
 
 const store = useStore()
-const { getProjects, getAbout, setScrollY, setProjectIndex } = store
-
-await getProjects()
-await getAbout()
-loaded.value = true
+const { projects, about } = storeToRefs(store)
+const { getProjects, getAbout, setScrollY, setProjectIndex, getData } = store
 
 onMounted(async () => {
 	window.addEventListener("scroll", () => {
@@ -16,9 +12,7 @@ onMounted(async () => {
 	})
 })
 
-if (loaded.value) {
-	setProjectIndex(0)
-}
+await getData()
 </script>
 
 <template>

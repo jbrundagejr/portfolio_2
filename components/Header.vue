@@ -31,11 +31,12 @@ const handlepageClick = (e: Event) => {
 }
 
 const linksToRender = computed(() => {
-	if (currentPage.value === "Projects") {
-		return pages.filter((page) => page.title === "About")
-	} else {
-		return pages.filter((page) => page.title === "Projects")
-	}
+	// if (currentPage.value === "Projects") {
+	// 	return pages.filter((page) => page.title === "About")
+	// } else {
+	// 	return pages.filter((page) => page.title === "Projects")
+	// }
+	return pages.filter((page) => page.title !== currentPage.value)
 })
 
 const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
@@ -71,8 +72,8 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 #header {
 	display: flex;
 	flex-direction: column;
-	padding: 24px 0 0;
-	z-index: 5;
+	padding: 24px 24px 0;
+	z-index: 10;
 	background: var(--white);
 	position: sticky;
 	top: 0;
@@ -103,6 +104,7 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 .tag-line p {
 	font-size: 16px;
 	line-height: 20px;
+	font-weight: 200;
 }
 
 #header::after {
@@ -123,6 +125,7 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 .header__title {
 	display: flex;
 	flex-direction: column;
+	min-height: 126px;
 }
 
 .header__nav {
@@ -131,12 +134,21 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	gap: 12px;
 	position: sticky;
 	top: 0;
+	justify-content: flex-end;
+}
+
+h2 {
+	padding: 0 0 24px;
 }
 
 @media (min-width: 768px) {
 	#header {
+		padding: 24px 0 0;
 	}
 
+	h2 {
+		padding: 0;
+	}
 	.header__header {
 		display: flex;
 		flex-direction: row;
@@ -144,11 +156,23 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 		align-items: center;
 		width: 100%;
 	}
+
+	.header__title {
+		min-height: none;
+	}
 }
 
 @media (min-width: 1080px) {
 	.header__title {
 		min-height: 110px;
+	}
+
+	.header__nav__link {
+		font-size: 24px;
+	}
+
+	.header__nav li {
+		padding: 0 24px;
 	}
 }
 

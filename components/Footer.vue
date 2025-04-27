@@ -43,7 +43,7 @@ const links = computed(() => {
 	bottom: 0;
 	display: flex;
 	justify-content: flex-end;
-	z-index: 5;
+	z-index: 10;
 	background: var(--white);
 	padding: 24px;
 	width: calc(100% - 48px);

@@ -76,7 +76,7 @@ onMounted(() => {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.7);
 	padding: 24px;
 }
 

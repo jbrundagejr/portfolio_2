@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useStore } from "~/stores/store"
+import { useBreakpointStore } from "~/stores/breakpointStore"
 import { storeToRefs } from "pinia"
 import { onIntersect } from "~/composables/onIntersect"
-import Projects from "~/components/projects/Projects.vue"
-import About from "~/components/About.vue"
-import type { PageInterface } from "~/util/types"
 
 const store = useStore()
-const { currentPage, projects } = storeToRefs(store)
 const { setCurrentPage } = store
+
+const breakpointStore = useBreakpointStore()
+const { isMobile } = storeToRefs(breakpointStore)
 
 const props = defineProps<{
 	title: string
@@ -19,16 +19,21 @@ const { title } = toRefs(props)
 const step = ref<HTMLElement | null>(null)
 const observer = ref({})
 
-const options = {
-	threshold: 0.1,
-	rootMargin: "-20% 0% -20%",
-}
+const options = computed(() => {
+	return {
+		threshold: 0.1,
+		// threshold: isMobile.value ? 0.5 : 0.1,
+		// rootMargin: isMobile.value ? "" : "-20% 0% -20%",
+	}
+})
 
 const onDownEnter = () => {
+	console.log("down enter", title.value)
 	setCurrentPage(title.value)
 }
 
 const onUpEnter = () => {
+	console.log("up enter", title.value)
 	setCurrentPage(title.value)
 }
 
@@ -38,7 +43,7 @@ onMounted(() => {
 			el: step.value,
 			downEnter: onDownEnter,
 			upEnter: onUpEnter,
-			options,
+			options: options.value,
 		})
 	}
 })
@@ -52,7 +57,8 @@ onMounted(() => {
 
 <style scoped>
 .page {
-	width: 100%;
+	width: calc(100% - 48px);
+	padding: 0 24px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
