@@ -146,9 +146,6 @@ h2 {
 		padding: 24px 0 0;
 	}
 
-	h2 {
-		padding: 0;
-	}
 	.header__header {
 		display: flex;
 		flex-direction: row;
