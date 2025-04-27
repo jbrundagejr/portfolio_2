@@ -67,6 +67,12 @@ const links = computed(() => {
 	justify-content: flex-end;
 }
 
+@media (min-width: 1080px) {
+	#footer {
+		padding: 0 24px 24px;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
 	#footer {
 		background: var(--black);

@@ -164,6 +164,10 @@ h2 {
 		min-height: 110px;
 	}
 
+	h2 {
+		padding: 0;
+	}
+
 	.header__nav__link {
 		font-size: 24px;
 	}
