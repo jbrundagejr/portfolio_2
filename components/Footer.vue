@@ -69,7 +69,7 @@ const links = computed(() => {
 
 @media (min-width: 1080px) {
 	#footer {
-		padding: 0 24px 24px;
+		padding: 12px 24px 24px;
 	}
 }
 
