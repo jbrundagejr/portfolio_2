@@ -45,7 +45,7 @@ const links = computed(() => {
 	justify-content: flex-end;
 	z-index: 10;
 	background: var(--white);
-	padding: 24px;
+	padding: 12px 24px 24px;
 	width: calc(100% - 48px);
 }
 

@@ -46,7 +46,8 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	<header id="header">
 		<div class="header__header">
 			<div class="header__title">
-				<h1>Jon Brundage Jr.</h1>
+				<h1 v-if="!isMobile">Jon Brundage Jr.</h1>
+				<h1 v-else class="h1--mobile">Jon <span>Brundage Jr.</span></h1>
 				<span v-if="atTopOfPage || !isMobile" class="tag-line fade-in">
 					<p v-for="line in tagline" :key="line">{{ line }}</p>
 				</span>
@@ -84,6 +85,12 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	display: flex;
 	flex-direction: column;
 	gap: 0;
+	overflow: hidden;
+}
+
+h1 span {
+	text-wrap: nowrap;
+	overflow: hidden;
 }
 
 .last-name {
@@ -105,6 +112,8 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 200;
+	width: fit-content;
+	text-wrap: nowrap;
 }
 
 #header::after {
@@ -137,8 +146,12 @@ const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 	justify-content: flex-end;
 }
 
+.header__nav__link {
+	padding: 8px 0 8px 8px;
+}
+
 h2 {
-	padding: 0 0 24px;
+	padding: 0 0 12px;
 }
 
 @media (min-width: 768px) {
@@ -170,6 +183,7 @@ h2 {
 
 	.header__nav__link {
 		font-size: 24px;
+		padding: 8px 16px;
 	}
 
 	.header__nav li {

@@ -93,7 +93,7 @@ const image = computed(() => {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	padding: 50vh 0;
+	padding: 25vh 0;
 }
 
 .fade-enter-active,
