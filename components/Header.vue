@@ -161,7 +161,7 @@ h2 {
 
 @media (min-width: 768px) {
 	#header {
-		padding: 24px 0 0;
+		width: calc(100% - 48px);
 	}
 
 	.header__header {
@@ -188,11 +188,7 @@ h2 {
 
 	.header__nav__link {
 		font-size: 24px;
-		padding: 8px 16px;
-	}
-
-	.header__nav li {
-		padding: 0 24px;
+		padding: 8px 0;
 	}
 }
 

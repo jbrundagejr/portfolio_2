@@ -67,6 +67,11 @@ const links = computed(() => {
 	justify-content: flex-end;
 }
 
+button:hover::before,
+a:hover::before {
+	transform: scaleX(0);
+}
+
 @media (min-width: 1080px) {
 	#footer {
 		padding: 12px 24px 24px;
