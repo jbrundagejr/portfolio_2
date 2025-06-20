@@ -15,7 +15,7 @@ export const useStore = defineStore("store", () => {
 	const scrollY = ref(0)
 
 	const getProjects = async () => {
-		const data = await fetch(`${BASE_URL}/data/projects.json`)
+		const data = await fetch(`/data/projects.json`)
 		const json = await data.json()
 		if (json.length > 0) {
 			projects.value = json
@@ -23,7 +23,7 @@ export const useStore = defineStore("store", () => {
 	}
 
 	const getAbout = async () => {
-		const data = await fetch(`${BASE_URL}/data/about.json`)
+		const data = await fetch(`/data/about.json`)
 		const json = await data.json()
 		if (json) {
 			about.value = json
