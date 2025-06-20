@@ -8,7 +8,7 @@ const store = useStore()
 const { scrollY, currentPage } = storeToRefs(store)
 
 const breakPointStore = useBreakpointStore()
-const { isMobile } = storeToRefs(breakPointStore)
+const { windowWidth, isMobile } = storeToRefs(breakPointStore)
 
 const atTopOfPage = computed(() => {
 	return scrollY.value === 0
@@ -39,13 +39,17 @@ const linksToRender = computed(() => {
 	return pages.filter((page) => page.title !== currentPage.value)
 })
 
-const tagline = ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
+const tagline = computed(() => {
+	if (!isMobile)
+		return ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
+	return ["Software Engineer.", "Life-long Learner."]
+})
 </script>
 
 <template>
 	<header id="header">
 		<div class="header__header">
-			<div class="header__title">
+			<div v-if="windowWidth" class="header__title">
 				<h1 v-if="!isMobile">Jon Brundage Jr.</h1>
 				<h1 v-else class="h1--mobile">Jon <span>Brundage Jr.</span></h1>
 				<span v-if="atTopOfPage || !isMobile" class="tag-line fade-in">

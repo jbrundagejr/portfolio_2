@@ -69,7 +69,7 @@ const image = computed(() => {
 	width: 100%;
 	height: 0;
 	position: sticky;
-	top: 50%;
+	top: calc(50% + 24px);
 	transform: translateY(-50%);
 }
 
@@ -93,7 +93,7 @@ const image = computed(() => {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	padding: 25vh 0;
+	padding: 35vh 0;
 }
 
 .fade-enter-active,
@@ -122,6 +122,7 @@ const image = computed(() => {
 
 	.projects__image-container {
 		width: 100%;
+		top: 50%;
 	}
 
 	.projects__copy-container {

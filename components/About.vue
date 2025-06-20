@@ -30,7 +30,7 @@ const { about } = storeToRefs(store)
 .about {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+
 	gap: 24px;
 	width: 100%;
 	justify-content: center;
@@ -41,7 +41,7 @@ const { about } = storeToRefs(store)
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
-	padding: 0 0 24px;
+	padding: 0 0 36px;
 }
 
 .about img {

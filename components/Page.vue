@@ -28,12 +28,10 @@ const options = computed(() => {
 })
 
 const onDownEnter = () => {
-	console.log("down enter", title.value)
 	setCurrentPage(title.value)
 }
 
 const onUpEnter = () => {
-	console.log("up enter", title.value)
 	setCurrentPage(title.value)
 }
 
@@ -58,9 +56,20 @@ onMounted(() => {
 <style scoped>
 .page {
 	width: calc(100% - 48px);
-	padding: 0 24px;
+	padding: 0 24px 72px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.page:last-child {
+	padding: 0 24px 48px;
+}
+
+@media (min-width: 1080px) {
+	.page {
+		padding: 0;
+		width: 100%;
+	}
 }
 </style>

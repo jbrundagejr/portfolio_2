@@ -15,8 +15,8 @@ const props = defineProps<{
 
 const { project, index } = toRefs(props)
 
+const observer = ref<IntersectionObserver | null>(null)
 const step = ref<HTMLElement | null>(null)
-const observer = ref({})
 
 const options = {
 	threshold: 0.3,
@@ -78,6 +78,11 @@ onMounted(() => {
 	gap: 20px;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 24px;
+	width: 100%;
+}
+
+.project * {
+	color: var(--white);
 }
 
 .project__header {
@@ -109,6 +114,10 @@ onMounted(() => {
 	.project {
 		background: none;
 		padding: 0;
+	}
+
+	.project * {
+		color: inherit;
 	}
 
 	.project:first-child {

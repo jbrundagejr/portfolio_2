@@ -39,7 +39,7 @@ const links = computed(() => {
 
 <style scoped>
 #footer {
-	position: sticky;
+	position: fixed;
 	bottom: 0;
 	display: flex;
 	justify-content: flex-end;
@@ -70,6 +70,7 @@ const links = computed(() => {
 @media (min-width: 1080px) {
 	#footer {
 		padding: 12px 24px 24px;
+		position: sticky;
 	}
 }
 

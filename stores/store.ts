@@ -10,8 +10,8 @@ export const useStore = defineStore("store", () => {
 	const projects = ref<ProjectInterface[]>([])
 	const about = ref<AboutInterface | null>(null)
 	const mobileMenuOpen = ref(false)
-	const currentPage = ref<string | null>(null)
-	const projectIndex = ref<number | null>(null)
+	const currentPage = ref<string>("Projects")
+	const projectIndex = ref<number>(0)
 	const scrollY = ref(0)
 
 	const getProjects = async () => {
@@ -28,13 +28,6 @@ export const useStore = defineStore("store", () => {
 		if (json) {
 			about.value = json
 		}
-	}
-
-	const getData = async () => {
-		await getProjects()
-		await getAbout()
-		setProjectIndex(0)
-		setCurrentPage("Projects")
 	}
 
 	const toggleMobileMenu = () => {
@@ -54,7 +47,6 @@ export const useStore = defineStore("store", () => {
 	}
 
 	return {
-		getData,
 		projects,
 		getProjects,
 		about,
