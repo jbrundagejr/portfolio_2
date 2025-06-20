@@ -59,5 +59,19 @@ const { about } = storeToRefs(store)
 		width: calc(100% - 96px);
 		height: calc(100vh - 228px);
 	}
+
+	.about__bio {
+		padding: 0;
+	}
+}
+
+@media (min-width: 1440px) {
+	.about__bio {
+		width: 700px;
+	}
+
+	.about img {
+		width: 400px;
+	}
 }
 </style>
