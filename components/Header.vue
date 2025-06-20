@@ -8,7 +8,7 @@ const store = useStore()
 const { scrollY, currentPage } = storeToRefs(store)
 
 const breakPointStore = useBreakpointStore()
-const { windowWidth, isMobile } = storeToRefs(breakPointStore)
+const { windowWidth, isMobile, isTablet } = storeToRefs(breakPointStore)
 
 const atTopOfPage = computed(() => {
 	return scrollY.value === 0
@@ -40,9 +40,10 @@ const linksToRender = computed(() => {
 })
 
 const tagline = computed(() => {
-	if (!isMobile)
-		return ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
-	return ["Software Engineer.", "Life-long Learner."]
+	if (isMobile.value || isTablet.value) {
+		return ["Software Engineer.", "Life-long Learner."]
+	}
+	return ["Software Engineer.", "Problem Solver.", "Life-long Learner."]
 })
 </script>
 
