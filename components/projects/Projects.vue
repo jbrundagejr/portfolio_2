@@ -1,21 +1,31 @@
 <script setup lang="ts">
 import { useStore } from "~/stores/store"
 import { storeToRefs } from "pinia"
-import Page from "../Page.vue"
 import Project from "./Project.vue"
+import Page from "../Page.vue"
+import VideoEmbed from "../VideoEmbed.vue"
 
 const store = useStore()
 const { projects, projectIndex, scrollY } = storeToRefs(store)
 const { setProjectIndex } = store
 
-const image = computed(() => {
-	if (scrollY.value === 0) {
-		setProjectIndex(0)
+const video = computed(() => {
+	if (
+		projectIndex.value !== null &&
+		projects.value[projectIndex.value] &&
+		projects.value[projectIndex.value].vimeoID
+	) {
 		return {
-			src: projects.value[0].image,
-			alt: projects.value[0].title,
+			src: projects.value[projectIndex.value].vimeoID,
+			alt: projects.value[projectIndex.value].title,
 		}
 	}
+	return undefined
+})
+
+const image = computed(() => {
+	// Only return image if there's no video
+	// if (video.value) return undefined
 	if (projectIndex.value !== null && projects.value[projectIndex.value]) {
 		return {
 			src: projects.value[projectIndex.value].image,
@@ -24,19 +34,21 @@ const image = computed(() => {
 	}
 	return undefined
 })
+
+console.log(video.value)
 </script>
 
 <template>
 	<Page title="Projects">
 		<template #content>
 			<div class="projects">
-				<div v-if="image" class="projects__image-container fade-in">
+				<div class="projects__image-container fade-in">
 					<transition name="fade">
 						<img
-							v-if="image"
-							:src="image.src"
-							:alt="image.alt"
-							:key="image.src"
+							v-show="image"
+							:src="image?.src"
+							:alt="image?.alt"
+							:key="image?.src"
 							class="projects__image"
 						/>
 					</transition>
@@ -63,26 +75,26 @@ const image = computed(() => {
 }
 
 .projects__image-container {
+	position: sticky;
+	right: 0;
+	min-width: 100%;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 0;
-	position: sticky;
-	top: calc(50% + 24px);
-	transform: translateY(-50%);
+	z-index: 2;
 }
 
-.projects__image-container img {
+.projects__image-container img,
+.projects__image-container video {
 	aspect-ratio: 16 / 9;
 	width: 100%;
 	height: auto;
 	object-fit: cover;
 	object-position: center;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	left: 0;
+	transition: opacity 0.35s ease;
 }
 
 .projects__copy-container {
@@ -116,13 +128,16 @@ const image = computed(() => {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 32px;
-		padding: 0 0 25vh;
+		padding: 0;
+		justify-content: center;
 		/* padding: 100px 0 300px; */
 	}
 
 	.projects__image-container {
-		width: 100%;
 		top: 50%;
+		justify-content: flex-end;
+		align-items: center;
+		transform: translateY(-50%);
 	}
 
 	.projects__copy-container {
@@ -131,7 +146,7 @@ const image = computed(() => {
 		justify-content: flex-start;
 		align-items: flex-start;
 		text-align: left;
-		padding: 0;
+		padding: 10vh 0 0;
 	}
 }
 </style>

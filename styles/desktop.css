@@ -4,9 +4,9 @@
 		/* line-height: 133%; */
 	}
 
-	h2 {
+	/* h2 {
 		font-size: 64px;
-	}
+	} */
 
 	.project-link,
 	h3 {
@@ -17,12 +17,13 @@
 	a,
 	li,
 	button {
-		font-size: 20px;
-		font-weight: 200;
+		font-size: 24px;
+		font-weight: 300;
 	}
 
-	.tool-icon {
-		height: 48px;
-		width: 48px;
+	.projects__image,
+	.projects__video,
+	.notes__container {
+		max-width: 650px;
 	}
 }

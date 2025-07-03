@@ -44,7 +44,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="project" ref="step">
+	<div class="project" ref="step" :id="project.title">
 		<div class="project__header">
 			<span v-if="project.link">
 				<a class="project-link" :href="project.link" target="_blank">{{
@@ -116,12 +116,12 @@ onMounted(() => {
 		padding: 0;
 	}
 
-	.project * {
-		color: inherit;
+	.project:last-child {
+		padding: 0 0 35vh;
 	}
 
-	.project:first-child {
-		padding: 24px 0 0;
+	.project * {
+		color: inherit;
 	}
 
 	.tool__container {

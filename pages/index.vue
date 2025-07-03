@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import FlashBanner from "~/components/FlashBanner.vue"
 import Projects from "~/components/projects/Projects.vue"
 import About from "~/components/About.vue"
 
@@ -10,6 +11,9 @@ useHead({
 <template>
 	<NuxtLayout>
 		<template #body>
+			<!--
+				<FlashBanner />
+			-->
 			<Projects />
 			<About />
 		</template>

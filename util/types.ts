@@ -11,6 +11,7 @@ export interface ProjectInterface {
 	title: string
 	tools: Tool[]
 	image: string
+	vimeoID: string | null
 	notes: string[]
 	link: string
 }

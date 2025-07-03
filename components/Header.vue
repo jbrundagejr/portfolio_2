@@ -5,7 +5,7 @@ import { pages } from "~/util/constants"
 import { useBreakpointStore } from "~/stores/breakpointStore"
 
 const store = useStore()
-const { scrollY, currentPage } = storeToRefs(store)
+const { scrollY, currentPage, projects } = storeToRefs(store)
 
 const breakPointStore = useBreakpointStore()
 const { windowWidth, isMobile, isTablet } = storeToRefs(breakPointStore)
@@ -14,18 +14,21 @@ const atTopOfPage = computed(() => {
 	return scrollY.value === 0
 })
 
-const handlepageClick = (e: Event) => {
+const handlePageClick = (e: Event) => {
 	const target = e.target as HTMLButtonElement
 	const page = target.value
-	if (page === "About") {
-		const el = document.getElementById(page)
-		if (el) {
-			el.scrollIntoView({ behavior: "smooth" })
-		}
+	let el: HTMLElement | null = null
+	if (page === "Projects") {
+		const firstTitle = projects.value[0].title
+		el = document.getElementById(firstTitle)
 	} else {
-		window.scrollTo({
-			top: 0,
+		el = document.getElementById(page)
+	}
+	console.log(el)
+	if (el) {
+		el.scrollIntoView({
 			behavior: "smooth",
+			block: page === "Projects" ? "center" : "start",
 		})
 	}
 }
@@ -58,10 +61,10 @@ const tagline = computed(() => {
 				</span>
 			</div>
 			<ul class="header__nav fade-in">
-				<li v-for="page in linksToRender" :key="page.title">
+				<li v-for="page in pages" :key="page.title">
 					<button
-						@click="handlepageClick"
-						class="header__nav__link link"
+						@click="handlePageClick"
+						:class="currentPage === page.title ? 'active' : ''"
 						:value="page.title"
 						:aria-label="`Scroll to ${page.title}`"
 					>
@@ -70,8 +73,9 @@ const tagline = computed(() => {
 				</li>
 			</ul>
 		</div>
-		<h2>{{ currentPage }}</h2>
-	</header>
+		<!--
+			<h2>{{ currentPage }}</h2>
+		--></header>
 </template>
 
 <style scoped>

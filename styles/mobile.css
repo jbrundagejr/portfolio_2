@@ -19,8 +19,8 @@ label,
 input,
 textarea,
 ::placeholder {
-	font-family: "Karla", sans-serif;
-	font-weight: 400;
+	font-family: "Alternate Gothic", sans-serif;
+	font-weight: 500;
 	line-height: 130%;
 	margin: 0;
 	padding: 0;
@@ -45,6 +45,7 @@ h1 {
 	font-size: 48px;
 	line-height: 110%;
 	text-transform: uppercase;
+	font-weight: 500;
 }
 
 h2 {
@@ -80,7 +81,7 @@ button {
 p,
 a,
 li {
-	font-family: "Karla", sans-serif;
+	font-family: "Alternate Gothic", sans-serif;
 	line-height: 130%;
 	font-weight: 400;
 }
@@ -98,6 +99,7 @@ button {
 	background: none;
 	border: none;
 	padding: 8px;
+	position: relative;
 }
 
 a {
@@ -119,7 +121,8 @@ a::before {
 }
 
 button:hover::before,
-a:hover::before {
+a:hover::before,
+.header__nav__link.active::before {
 	transform: scaleX(1);
 }
 
@@ -129,17 +132,33 @@ a:hover::before {
 	gap: 20px;
 }
 
-.link-icon {
-	width: 48px;
-	height: 48px;
+.link-icon,
+.chevron-icon {
 	padding: 0;
 	display: flex;
 	flex-shrink: 0;
+	color: inherit;
+	transition: rotate 350ms ease;
+}
+
+.link-icon {
+	width: 36px;
+	height: 36px;
+}
+
+.chevron-icon {
+	width: 24px;
+	height: 24px;
+	rotate: 0deg;
+}
+
+.chevron-icon--up {
+	rotate: 180deg;
 }
 
 .tool-icon {
-	height: 36px;
-	width: 36px;
+	height: 24px;
+	width: 24px;
 	color: var(--black);
 }
 

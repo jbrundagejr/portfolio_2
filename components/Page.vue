@@ -67,6 +67,9 @@ onMounted(() => {
 }
 
 @media (min-width: 1080px) {
+	.page {
+		padding: 48px 24px;
+	}
 	/* .page {
 		padding: 0;
 		width: 100%;

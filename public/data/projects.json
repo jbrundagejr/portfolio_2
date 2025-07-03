@@ -10,6 +10,7 @@
 			{ "icon": "material-ui", "link": "https://mui.com/material-ui/" }
 		],
 		"image": "/images/tntp.png",
+		"vimeoID": "1098353784",
 		"notes": [
 			"This project was an overhaul of an existing prototype built in React and required the addition of Auth0 for user management and authentication. I had to learn how to fire event hooks from Auth0 to keep our user profile data in sync with our Sanity instance.",
 			"The original prototype was using Airtable for a backend which isn't scalable in terms of network calls, so I switched it to Sanity for a more robust solution and a client-friendly interface.",
@@ -30,6 +31,7 @@
 			}
 		],
 		"image": "/images/aspi.png",
+		"vimeoID": "1098353328",
 		"notes": [
 			"For this project, the client wanted us to build a custom visualization, and then incoporate it into their existing Drupal site. I chose Svelte for the build because it is a lightweight framework that would have minimal build size.",
 			"We also used Google Sheets as a backend, with an AWS Lambda function to pull the data from the sheet and write out a JSON file in a S3 bucket that the Svelte app could read.",
@@ -48,6 +50,7 @@
 			{ "icon": "netlify", "link": "https://docs.netlify.com/" }
 		],
 		"image": "/images/schema.png",
+		"vimeoID": "1098353541",
 		"link": "https://www.schemadesign.com",
 		"notes": [
 			"When my CEO asked me to build a new website for our company, I was excited to take on the challenge and honored to be trusted with it.",
@@ -57,24 +60,24 @@
 		]
 	},
 	{
-		"title": "Bloomberg NEF 2022",
+		"title": "Atlantic Council Mythical Beasts",
 		"tools": [
 			{
-				"icon": "threejs",
-				"link": "https://threejs.org/manual/#en/installation"
+				"icon": "react",
+				"link": "https://nuxt.com/docs/getting-started/introduction"
 			},
-			{ "icon": "gsap", "link": "https://gsap.com/docs/v3/" },
-			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
+			{ "icon": "d3", "link": "https://d3js.org/getting-started" },
+			{ "icon": "aws", "link": "https://aws.amazon.com/documentation/" }
 		],
-		"image": "/images/bloomberg.png",
+		"image": "/images/ac-mythicalbeasts.png",
+		"vimeoID": "1098355972",
 		"notes": [
-			"This project was for the Bloomberg NEF 2022 conference, which featured multiple live installations of 3D data visualizations.",
-			"I was responsible for two animations, one projecting how much Co2 emissions will be captured globally by 2070, and the second analzying how much countries have spent on tech venture capitalism over the last 14 years.",
-			"I used a phsyics library in conjunction with Three.js to simulate carbon particles floating up into a container to show how much a given method will capture.",
-			"For the VC visualization, I used GSAP to animate distinct towers of six by six bricks falling per country per grid.",
-			"The result were two stunning visualizations that made abstract data come to life in a way that was engaging and informative."
+			"For this application, the client wanted to highlight the everchanging relations of spyware companies and how they are connected to governments and other entities.",
+			"The build utilizies D3's force simulation to create a network graph that shows the relationships between the entities.",
+			"I also built in a playback feature that allows users to see how the relationships have changed over time.",
+			"The site is built in React and Typescript, with a simple Google sheet backend that is client friendly and easy to update via an AWS Lambda function."
 		],
-		"link": ""
+		"link": "https://mythicalbeasts.dfrlab.org/"
 	},
 	{
 		"title": "Sedus Workscape of Tomorrow",
@@ -88,6 +91,7 @@
 			{ "icon": "firebase", "link": "https://firebase.google.com/docs" }
 		],
 		"image": "/images/sedus.png",
+		"vimeoID": "1098353659",
 		"notes": [
 			"This was my first project with Nuxt 3. It was a complete rebuild of a prototype built in Vue 2 so there was quite a challenge in terms of rethinking the architecture.",
 			"The project called for site translation, which required setting up localization not only in the frontend, but also in our Sanity instance for images and videos.",
@@ -104,6 +108,7 @@
 			{ "icon": "d3", "link": "https://d3js.org/getting-started" }
 		],
 		"image": "/images/pefa.png",
+		"vimeoID": "1098353404",
 		"notes": [
 			"The project was an update to an on-going report we helped build for the World Bank.",
 			"The site uses multiple charts built in D3, and I had to build two new one for this release.",
