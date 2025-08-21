@@ -10,7 +10,7 @@
 			{ "icon": "material-ui", "link": "https://mui.com/material-ui/" }
 		],
 		"image": "/images/tntp.png",
-		"vimeoID": "1098353784",
+		"vimeoID": "1111843112",
 		"notes": [
 			"This project was an overhaul of an existing prototype built in React and required the addition of Auth0 for user management and authentication. I had to learn how to fire event hooks from Auth0 to keep our user profile data in sync with our Sanity instance.",
 			"The original prototype was using Airtable for a backend which isn't scalable in terms of network calls, so I switched it to Sanity for a more robust solution and a client-friendly interface.",

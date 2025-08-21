@@ -17,7 +17,6 @@ const currentProject = computed(() => projects.value[index.value])
 
 const handleBannerClick = (e: Event) => {
 	const target = e.target as HTMLButtonElement
-	console.log(e)
 	const projectTitle = target.value
 	const el = document.getElementById(projectTitle)
 	if (el) {

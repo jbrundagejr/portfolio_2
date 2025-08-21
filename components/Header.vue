@@ -24,7 +24,6 @@ const handlePageClick = (e: Event) => {
 	} else {
 		el = document.getElementById(page)
 	}
-	console.log(el)
 	if (el) {
 		el.scrollIntoView({
 			behavior: "smooth",

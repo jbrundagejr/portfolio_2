@@ -9,23 +9,20 @@ const store = useStore()
 const { projects, projectIndex, scrollY } = storeToRefs(store)
 const { setProjectIndex } = store
 
-const video = computed(() => {
+const videoID = computed(() => {
 	if (
 		projectIndex.value !== null &&
 		projects.value[projectIndex.value] &&
 		projects.value[projectIndex.value].vimeoID
 	) {
-		return {
-			src: projects.value[projectIndex.value].vimeoID,
-			alt: projects.value[projectIndex.value].title,
-		}
+		return projects.value[projectIndex.value].vimeoID
 	}
 	return undefined
 })
 
 const image = computed(() => {
 	// Only return image if there's no video
-	// if (video.value) return undefined
+	if (videoID.value) return undefined
 	if (projectIndex.value !== null && projects.value[projectIndex.value]) {
 		return {
 			src: projects.value[projectIndex.value].image,
@@ -34,8 +31,6 @@ const image = computed(() => {
 	}
 	return undefined
 })
-
-console.log(video.value)
 </script>
 
 <template>
@@ -43,6 +38,9 @@ console.log(video.value)
 		<template #content>
 			<div class="projects">
 				<div class="projects__image-container fade-in">
+					<transition name="fade">
+						<VideoEmbed v-if="videoID" :id="videoID" />
+					</transition>
 					<transition name="fade">
 						<img
 							v-show="image"
@@ -71,12 +69,14 @@ console.log(video.value)
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 25vh 0;
+	padding: 25vh 0 0;
 }
 
 .projects__image-container {
 	position: sticky;
 	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
 	min-width: 100%;
 	width: 100%;
 	height: auto;

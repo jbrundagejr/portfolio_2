@@ -122,7 +122,8 @@ a::before {
 
 button:hover::before,
 a:hover::before,
-.header__nav__link.active::before {
+.header__nav__link.active::before,
+button .active {
 	transform: scaleX(1);
 }
 
