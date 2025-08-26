@@ -6,7 +6,7 @@ import { onIntersect } from "~/composables/onIntersect"
 import type { ProjectInterface } from "~/util/types"
 
 const store = useStore()
-const { projectIndex } = storeToRefs(store)
+const { setProjectIndex } = store
 
 const props = defineProps<{
 	project: ProjectInterface
@@ -24,11 +24,11 @@ const options = {
 }
 
 const onDownEnter = () => {
-	projectIndex.value = index.value
+	setProjectIndex(index.value)
 }
 
 const onUpEnter = () => {
-	projectIndex.value = index.value
+	setProjectIndex(index.value)
 }
 
 onMounted(() => {

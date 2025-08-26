@@ -39,6 +39,7 @@ export const useStore = defineStore("store", () => {
 	}
 
 	const setProjectIndex = (index: number) => {
+		if (scrollY.value === 0) return
 		projectIndex.value = index
 	}
 
